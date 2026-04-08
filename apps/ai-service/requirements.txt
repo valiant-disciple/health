@@ -1,0 +1,55 @@
+# Web framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# Anthropic
+anthropic==0.45.0
+
+# LangGraph + LangChain
+langgraph==0.2.72
+langchain-anthropic==0.3.4
+langchain-core==0.3.34
+
+# DSPy
+dspy-ai==2.6.0
+
+# Supabase
+supabase==2.13.0
+
+# Neo4j
+neo4j==5.27.0
+
+# Vector DB
+qdrant-client==1.13.1
+fastembed==0.4.2
+
+# Memory
+graphiti-core==0.4.1
+mem0ai==0.1.39
+
+# Guardrails
+llm-guard==0.3.14
+nemoguardrails==0.11.0
+
+# Observability
+langfuse==2.59.3
+
+# Evaluation (CI)
+deepeval==1.4.9
+ragas==0.2.6
+datasets==3.2.0
+
+# Jobs / Async
+inngest==0.4.18
+redis==5.2.1
+httpx==0.28.1
+
+# Utilities
+pydantic==2.10.6
+pydantic-settings==2.7.1
+python-jose[cryptography]==3.3.0
+python-dotenv==1.0.1
+tiktoken==0.9.0
+tenacity==9.0.0
+structlog==25.1.0

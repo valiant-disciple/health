@@ -1,0 +1,10 @@
+{
+  "name": "@health/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./types/index.ts",
+  "types": "./types/index.ts",
+  "scripts": {
+    "gen-types": "supabase gen types typescript --local > types/database.generated.ts"
+  }
+}
