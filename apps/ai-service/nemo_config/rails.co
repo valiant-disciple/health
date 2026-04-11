@@ -71,3 +71,31 @@ define bot safe prescribe redirect
 define flow check prescribe output
   bot make prescribe output
   bot safe prescribe redirect
+
+# ─── Additional output safety rails ───────────────────────────────────────────
+
+define bot make prognosis claim
+  "you will develop"
+  "you are likely to get"
+  "your prognosis is"
+  "you will probably die"
+  "you have a high chance of"
+
+define bot safe prognosis redirect
+  "I'm not able to make predictions about future health outcomes — that requires a full clinical evaluation. I can help you understand your current results and what they might mean for your health goals."
+
+define flow check prognosis claim
+  bot make prognosis claim
+  bot safe prognosis redirect
+
+define bot make supplement dosage claim
+  "take [number] mg of"
+  "you should supplement with [number]"
+  "the correct dose is [number]"
+
+define bot safe supplement redirect
+  "Supplement dosages vary based on individual health factors — I'd recommend discussing specific amounts with your doctor or pharmacist before starting any new supplement."
+
+define flow check supplement dosage
+  bot make supplement dosage claim
+  bot safe supplement redirect

@@ -20,35 +20,33 @@ _mem0 = None
 async def init_graphiti():
     global _graphiti
     try:
+        from openai import AsyncOpenAI
         from graphiti_core import Graphiti
         from graphiti_core.llm_client.openai_client import OpenAIClient
-        from graphiti_core.llm_client.config import LLMConfig
         from graphiti_core.embedder.openai import OpenAIEmbedder
-        from graphiti_core.embedder.config import EmbedderConfig
+        from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerClient
 
-        llm_client = OpenAIClient(
-            config=LLMConfig(
-                api_key=settings.OPENAI_API_KEY,
-                model=settings.PRIMARY_MODEL,
-            )
-        )
-        embedder = OpenAIEmbedder(
-            config=EmbedderConfig(
-                api_key=settings.OPENAI_API_KEY,
-                embedding_model="text-embedding-3-small",
-            )
-        )
+        # Build one AsyncOpenAI client with explicit key and pass it to every
+        # graphiti sub-client — prevents internal env-var lookups that fail
+        # under uvicorn's reloader subprocess.
+        openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+
+        llm_client    = OpenAIClient(client=openai_client)
+        embedder      = OpenAIEmbedder(client=openai_client)
+        cross_encoder = OpenAIRerankerClient(client=openai_client)
+
         _graphiti = Graphiti(
             uri=settings.NEO4J_URI,
             user=settings.NEO4J_USER,
             password=settings.NEO4J_PASSWORD,
             llm_client=llm_client,
             embedder=embedder,
+            cross_encoder=cross_encoder,
         )
         await _graphiti.build_indices_and_constraints()
         log.info("graphiti.initialized")
     except Exception as e:
-        log.error("graphiti.init_failed", error=str(e))
+        log.error("graphiti.init_failed", error=str(e), exc_info=True)
 
 
 async def close_graphiti():
@@ -105,7 +103,7 @@ def _get_mem0():
         })
         log.info("mem0.initialized")
     except Exception as e:
-        log.error("mem0.init_failed", error=str(e))
+        log.error("mem0.init_failed", error=str(e), exc_info=True)
     return _mem0
 
 
@@ -128,7 +126,7 @@ async def store_health_episode(user_id: str, event: dict):
             group_id=user_id,
         )
     except Exception as e:
-        log.error("graphiti.store_episode_failed", error=str(e))
+        log.error("graphiti.store_episode_failed", error=str(e), exc_info=True)
 
 
 async def extract_and_store_facts(user_id: str, interpretation: dict, report_id: str):
@@ -149,7 +147,7 @@ async def extract_and_store_facts(user_id: str, interpretation: dict, report_id:
         )
         log.info("graphiti.facts_stored", user_id=user_id, report_id=report_id)
     except Exception as e:
-        log.error("graphiti.extract_facts_failed", error=str(e))
+        log.error("graphiti.extract_facts_failed", error=str(e), exc_info=True)
 
 
 async def query_graph_context(
@@ -190,7 +188,7 @@ async def query_graph_context(
             })
         return output
     except Exception as e:
-        log.error("graphiti.search_failed", error=str(e))
+        log.error("graphiti.search_failed", error=str(e), exc_info=True)
         return []
 
 
@@ -207,7 +205,7 @@ async def get_relevant_memories(user_id: str, query: str, limit: int = 5) -> str
             return ""
         return "\n".join(f"- {m.get('memory', m.get('text', ''))}" for m in memories)
     except Exception as e:
-        log.error("mem0.search_failed", error=str(e))
+        log.error("mem0.search_failed", error=str(e), exc_info=True)
         return ""
 
 
@@ -240,7 +238,7 @@ async def mem0_recall(
             if m.get("memory") or m.get("text")
         ]
     except Exception as e:
-        log.error("mem0.recall_failed", error=str(e))
+        log.error("mem0.recall_failed", error=str(e), exc_info=True)
         return []
 
 
@@ -255,7 +253,7 @@ async def update_user_memory(user_id: str, messages: list, metadata: dict | None
     try:
         mem0.add(messages, user_id=user_id, metadata=metadata)
     except Exception as e:
-        log.error("mem0.update_failed", error=str(e))
+        log.error("mem0.update_failed", error=str(e), exc_info=True)
 
 
 async def store_clinical_memory(user_id: str, text: str) -> None:
@@ -276,7 +274,7 @@ async def store_clinical_memory(user_id: str, text: str) -> None:
         )
         log.info("mem0.clinical_stored", user_id=user_id, length=len(text))
     except Exception as e:
-        log.error("mem0.clinical_store_failed", error=str(e))
+        log.error("mem0.clinical_store_failed", error=str(e), exc_info=True)
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────

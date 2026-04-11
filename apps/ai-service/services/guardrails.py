@@ -53,7 +53,7 @@ def _get_presidio():
         _anonymizer = AnonymizerEngine()
         log.info("presidio.initialized")
     except Exception as e:
-        log.error("presidio.init_failed", error=str(e))
+        log.error("presidio.init_failed", error=str(e), exc_info=True)
     return _analyzer, _anonymizer
 
 
@@ -74,7 +74,7 @@ def _presidio_scan(text: str) -> tuple[str, bool]:
             return anonymized.text, True
         return text, True
     except Exception as e:
-        log.error("presidio.scan_failed", error=str(e))
+        log.error("presidio.scan_failed", error=str(e), exc_info=True)
         return text, True
 
 
@@ -95,7 +95,7 @@ async def _openai_moderation(text: str) -> bool:
             return False
         return True
     except Exception as e:
-        log.error("openai_moderation.failed", error=str(e))
+        log.error("openai_moderation.failed", error=str(e), exc_info=True)
         return True  # degrade to passthrough
 
 
@@ -142,7 +142,7 @@ def _get_nemo_rails():
         else:
             log.warning("nemo.config_not_found", path=config_path)
     except Exception as e:
-        log.error("nemo.init_failed", error=str(e))
+        log.error("nemo.init_failed", error=str(e), exc_info=True)
     return _nemo_rails
 
 
@@ -174,7 +174,7 @@ async def apply_dialog_rails(user_message: str) -> tuple[str, bool]:
             return response, False
         return user_message, True
     except Exception as e:
-        log.error("nemo.apply_failed", error=str(e))
+        log.error("nemo.apply_failed", error=str(e), exc_info=True)
         return user_message, True
 
 

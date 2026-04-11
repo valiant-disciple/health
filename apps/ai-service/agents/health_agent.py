@@ -14,6 +14,7 @@ from langgraph.prebuilt import ToolNode
 from config import settings
 from agents.tools import get_tools
 from prompts.chat import build_system_prompt
+from services.tracing import get_langfuse_callback
 
 
 class AgentState(TypedDict):
@@ -80,7 +81,15 @@ async def run_health_agent(
         "requires_clinical_review": False,
     }
 
-    async for event in graph.astream_events(initial_state, version="v2"):
+    # Attach Langfuse callback for observability (no-op when not configured)
+    config: dict = {"callbacks": []}
+    cb = get_langfuse_callback()
+    if cb:
+        cb.session_id = conversation_id
+        cb.user_id = user_id
+        config["callbacks"].append(cb)
+
+    async for event in graph.astream_events(initial_state, version="v2", config=config):
         kind = event.get("event")
         if kind == "on_chat_model_stream":
             chunk = event["data"].get("chunk")

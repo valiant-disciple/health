@@ -79,7 +79,7 @@ async def _process_apple_upload(user_id: str, file_bytes: bytes):
         }).eq("user_id", user_id).eq("provider", "apple_health").execute()
         log.info("apple_health.import_done", user_id=user_id, inserted=inserted)
     except Exception as e:
-        log.error("apple_health.import_failed", user_id=user_id, error=str(e))
+        log.error("apple_health.import_failed", user_id=user_id, error=str(e), exc_info=True)
         db = await get_supabase()
         await db.table("wearable_connections").update({
             "status":   "error",
@@ -210,7 +210,7 @@ async def _fitbit_sync_task(user_id: str, access_token: str, since_days: int = 3
         }).eq("user_id", user_id).eq("provider", "fitbit").execute()
         log.info("fitbit.sync_done", user_id=user_id, inserted=inserted)
     except Exception as e:
-        log.error("fitbit.sync_failed", user_id=user_id, error=str(e))
+        log.error("fitbit.sync_failed", user_id=user_id, error=str(e), exc_info=True)
 
 
 async def _get_valid_fitbit_token(user_id: str) -> str:
@@ -240,7 +240,7 @@ async def _get_valid_fitbit_token(user_id: str) -> str:
                 }).eq("user_id", user_id).eq("provider", "fitbit").execute()
                 return tokens["access_token"]
             except Exception as e:
-                log.error("fitbit.refresh_failed", error=str(e))
+                log.error("fitbit.refresh_failed", error=str(e), exc_info=True)
                 raise HTTPException(502, "Could not refresh Fitbit token")
 
     return conn["access_token"]
@@ -321,7 +321,7 @@ async def _store_wearable_episodes(user_id: str, events: list[dict]) -> None:
             await store_health_episode(user_id, rep)
             count += 1
         except Exception as e:
-            log.warning("wearables.graphiti_episode_failed", error=str(e))
+            log.warning("wearables.graphiti_episode_failed", error=str(e), exc_info=True)
 
     log.info("wearables.graphiti_episodes_stored", user_id=user_id, stored=count)
 
@@ -351,7 +351,7 @@ async def _bulk_insert_events(user_id: str, events: list[dict]) -> int:
             ).execute()
             inserted += len(res.data or [])
         except Exception as e:
-            log.error("wearables.insert_failed", batch_start=i, error=str(e))
+            log.error("wearables.insert_failed", batch_start=i, error=str(e), exc_info=True)
 
     # Qdrant upsert — fire and forget per event (non-blocking)
     async def _upsert_all():
@@ -360,7 +360,7 @@ async def _bulk_insert_events(user_id: str, events: list[dict]) -> int:
                 event_id = f"{user_id}:{event['biomarker_code']}:{event['occurred_at']}"
                 await upsert_health_event(event_id, user_id, event)
             except Exception as e:
-                log.warning("wearables.qdrant_upsert_failed", error=str(e))
+                log.warning("wearables.qdrant_upsert_failed", error=str(e), exc_info=True)
 
     asyncio.create_task(_upsert_all())
     return inserted

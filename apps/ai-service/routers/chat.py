@@ -8,8 +8,9 @@ import json
 
 from agents.health_agent import run_health_agent
 from services.db import get_supabase
-from services.guardrails import scan_user_input, apply_dialog_rails
+from services.guardrails import scan_user_input, apply_dialog_rails, scan_llm_output
 from services.memory import get_relevant_memories, update_user_memory
+from services.rate_limit import check_rate_limit
 from dspy_programs import get_chat_context_program
 
 log = structlog.get_logger()
@@ -33,6 +34,9 @@ async def chat(
 ):
     if x_user_id != req.user_id:
         raise HTTPException(403)
+
+    # Rate limit: 30 requests / 60 seconds per user
+    check_rate_limit(req.user_id, "chat")
 
     # L1 guardrail: LLM Guard input scan
     sanitized_input, input_safe = await scan_user_input(req.message)
@@ -63,7 +67,7 @@ async def chat(
             )
             memories = ctx_result.focused_context or memories
         except Exception as e:
-            log.warning("chat.context_refine_failed", error=str(e))
+            log.warning("chat.context_refine_failed", error=str(e), exc_info=True)
 
     async def generate():
         full_response = ""
@@ -78,11 +82,23 @@ async def chat(
             full_response += chunk
             yield f"data: {json.dumps({'chunk': chunk})}\n\n"
 
+        # L3 guardrail: scan full response for PHI leakage / harmful output
+        safe_response, output_safe = await scan_llm_output(sanitized_input, full_response)
+        if not output_safe:
+            log.warning("chat.l3_output_blocked", user_id=req.user_id)
+            safe_response = (
+                "I'm not able to send that response. Please rephrase your question "
+                "or speak with a healthcare professional."
+            )
+            # Send a replacement chunk so the client receives something
+            yield f"data: {json.dumps({'chunk': safe_response, 'filtered': True})}\n\n"
+
         yield "data: [DONE]\n\n"
 
+        final_response = safe_response if not output_safe else full_response
         turn_messages = [
             {"role": "user",      "content": sanitized_input},
-            {"role": "assistant", "content": full_response},
+            {"role": "assistant", "content": final_response},
         ]
         # Persist messages to DB (session continuity)
         asyncio.create_task(
@@ -109,7 +125,7 @@ async def _load_conversation_history(conversation_id: str) -> list[dict]:
         messages.reverse()
         return [{"role": m["role"], "content": m["content"]} for m in messages]
     except Exception as e:
-        log.warning("chat.history_load_failed", conversation_id=conversation_id, error=str(e))
+        log.warning("chat.history_load_failed", conversation_id=conversation_id, error=str(e), exc_info=True)
         return []
 
 
@@ -132,4 +148,4 @@ async def _persist_messages(
         ]
         await db.table("messages").insert(rows).execute()
     except Exception as e:
-        log.error("chat.persist_failed", conversation_id=conversation_id, error=str(e))
+        log.error("chat.persist_failed", conversation_id=conversation_id, error=str(e), exc_info=True)

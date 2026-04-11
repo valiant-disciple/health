@@ -131,7 +131,7 @@ async def assemble_patient_artifact(user_id: str, focus: str = "general") -> Pat
             if len(drug_names) >= 2:
                 drug_interactions = await get_drug_interactions(user_id, drug_names)
         except Exception as e:
-            log.error("context.drug_interactions_failed", error=str(e))
+            log.error("context.drug_interactions_failed", error=str(e), exc_info=True)
 
     artifact = PatientArtifact(
         user_id=user_id,

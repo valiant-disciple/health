@@ -360,7 +360,7 @@ async def _store_lab_episodes(user_id: str, event_rows: list[dict]) -> None:
         try:
             await store_health_episode(user_id, event)
         except Exception as e:
-            log.warning("ocr.graphiti_episode_failed", error=str(e))
+            log.warning("ocr.graphiti_episode_failed", error=str(e), exc_info=True)
 
 
 # ─── Query ───────────────────────────────────────────────────────────────────

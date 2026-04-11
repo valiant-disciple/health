@@ -171,7 +171,7 @@ async def _fetch_heart_rate(
                     metadata={"zones": vals.get("heartRateZones", [])},
                 ))
     except Exception as e:
-        log.warning("fitbit.heart_rate_failed", error=str(e))
+        log.warning("fitbit.heart_rate_failed", error=str(e), exc_info=True)
     return events
 
 
@@ -206,7 +206,7 @@ async def _fetch_activity(
                         source="fitbit",
                     ))
         except Exception as e:
-            log.warning(f"fitbit.{resource}_failed", error=str(e))
+            log.warning(f"fitbit.{resource}_failed", error=str(e), exc_info=True)
     return events
 
 
@@ -240,7 +240,7 @@ async def _fetch_sleep(
                         },
                     ))
     except Exception as e:
-        log.warning("fitbit.sleep_failed", error=str(e))
+        log.warning("fitbit.sleep_failed", error=str(e), exc_info=True)
     return events
 
 
@@ -278,7 +278,7 @@ async def _fetch_body(
                         value=fat, occurred_at=f"{dt}T00:00:00+00:00", source="fitbit",
                     ))
     except Exception as e:
-        log.warning("fitbit.body_failed", error=str(e))
+        log.warning("fitbit.body_failed", error=str(e), exc_info=True)
     return events
 
 
@@ -306,5 +306,5 @@ async def _fetch_spo2(
                     source="fitbit",
                 ))
     except Exception as e:
-        log.warning("fitbit.spo2_failed", error=str(e))
+        log.warning("fitbit.spo2_failed", error=str(e), exc_info=True)
     return events

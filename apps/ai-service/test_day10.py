@@ -391,7 +391,7 @@ class TestHealthAgentHistory:
         ]
         captured_state: dict = {}
 
-        async def _fake_stream(initial_state, version):
+        async def _fake_stream(initial_state, version, config=None):
             captured_state.update(initial_state)
             return
             yield  # make it an async generator
@@ -399,7 +399,8 @@ class TestHealthAgentHistory:
         mock_graph = MagicMock()
         mock_graph.astream_events = _fake_stream
 
-        with patch("agents.health_agent.get_graph", return_value=mock_graph):
+        with patch("agents.health_agent.get_graph", return_value=mock_graph), \
+             patch("agents.health_agent.get_langfuse_callback", return_value=None):
             from agents.health_agent import run_health_agent
             gen = run_health_agent(
                 user_id="u", message="Follow-up question",
@@ -417,7 +418,7 @@ class TestHealthAgentHistory:
     async def test_no_history_uses_only_current_message(self):
         captured_state: dict = {}
 
-        async def _fake_stream(initial_state, version):
+        async def _fake_stream(initial_state, version, config=None):
             captured_state.update(initial_state)
             return
             yield
@@ -425,7 +426,8 @@ class TestHealthAgentHistory:
         mock_graph = MagicMock()
         mock_graph.astream_events = _fake_stream
 
-        with patch("agents.health_agent.get_graph", return_value=mock_graph):
+        with patch("agents.health_agent.get_graph", return_value=mock_graph), \
+             patch("agents.health_agent.get_langfuse_callback", return_value=None):
             from agents.health_agent import run_health_agent
             gen = run_health_agent(
                 user_id="u", message="First message",

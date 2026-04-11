@@ -77,7 +77,7 @@ async def hybrid_search(
         )
         return [r.payload for r in results.points if r.payload]
     except Exception as e:
-        log.error("vector.search_failed", error=str(e))
+        log.error("vector.search_failed", error=str(e), exc_info=True)
         return []
 
 
@@ -161,7 +161,7 @@ async def search_medical_kb(
         )
         return [r.payload for r in results.points if r.payload]
     except Exception as e:
-        log.error("vector.kb_search_failed", error=str(e))
+        log.error("vector.kb_search_failed", error=str(e), exc_info=True)
         return []
 
 

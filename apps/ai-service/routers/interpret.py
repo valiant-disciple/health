@@ -10,6 +10,7 @@ from services.context import assemble_patient_artifact
 from services.ocr import get_lab_results_for_report
 from services.guardrails import run_guardrails
 from services.memory import extract_and_store_facts
+from services.rate_limit import check_rate_limit
 from dspy_programs import get_interpret_program
 
 log = structlog.get_logger()
@@ -29,6 +30,8 @@ async def interpret_report(
     # Verify caller matches claimed user_id (JWT validated by middleware)
     if x_user_id != req.user_id:
         raise HTTPException(403, "User ID mismatch")
+
+    check_rate_limit(req.user_id, "interpret")
 
     log.info("interpret_report.start", user_id=req.user_id, report_id=req.report_id)
 

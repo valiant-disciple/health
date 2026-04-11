@@ -35,7 +35,7 @@ def _configure_dspy():
         )
         dspy.configure(lm=lm)
     except Exception as e:
-        log.warning("dspy.configure_failed", error=str(e))
+        log.warning("dspy.configure_failed", error=str(e), exc_info=True)
 
 
 def get_interpret_program():
@@ -55,7 +55,7 @@ def get_interpret_program():
             prog.load(str(compiled_path))
             log.info("dspy.interpret_program_loaded", path=str(compiled_path))
         except Exception as e:
-            log.warning("dspy.interpret_load_failed", error=str(e))
+            log.warning("dspy.interpret_load_failed", error=str(e), exc_info=True)
     else:
         log.info("dspy.interpret_program_uncompiled")
 
@@ -80,7 +80,7 @@ def get_chat_context_program():
             prog.load(str(compiled_path))
             log.info("dspy.chat_context_program_loaded", path=str(compiled_path))
         except Exception as e:
-            log.warning("dspy.chat_context_load_failed", error=str(e))
+            log.warning("dspy.chat_context_load_failed", error=str(e), exc_info=True)
     else:
         log.info("dspy.chat_context_program_uncompiled")
 

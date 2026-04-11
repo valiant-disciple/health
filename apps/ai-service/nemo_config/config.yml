@@ -21,3 +21,5 @@ rails:
     flows:
       - check diagnosis claim
       - check prescribe output
+      - check prognosis claim
+      - check supplement dosage

@@ -36,8 +36,11 @@ nemoguardrails==0.21.0        # L2 dialog rails
 presidio-analyzer==2.2.362    # L1/L3 PHI/PII scan (Python 3.13 compatible)
 presidio-anonymizer==2.2.362
 
-# Observability
+# Observability + Evals
 langfuse==4.1.0
+deepeval==3.9.6
+ragas==0.4.3
+datasets==3.6.0
 
 # PDF
 pypdf==4.3.1
