@@ -7,7 +7,7 @@ from typing import AsyncGenerator, TypedDict, Annotated
 import operator
 import json
 
-from langchain_anthropic import ChatAnthropic
+from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
 
@@ -25,9 +25,9 @@ class AgentState(TypedDict):
 
 def _build_graph():
     tools = get_tools()
-    model = ChatAnthropic(
+    model = ChatOpenAI(
         model=settings.PRIMARY_MODEL,
-        anthropic_api_key=settings.ANTHROPIC_API_KEY,
+        api_key=settings.OPENAI_API_KEY,
         streaming=True,
     ).bind_tools(tools)
 
@@ -69,10 +69,12 @@ async def run_health_agent(
     conversation_id: str,
     report_id: str | None,
     memories: str,
+    conversation_history: list[dict] | None = None,
 ) -> AsyncGenerator[str, None]:
     graph = get_graph()
+    prior = conversation_history or []
     initial_state: AgentState = {
-        "messages": [{"role": "user", "content": message}],
+        "messages": [*prior, {"role": "user", "content": message}],
         "user_id": user_id,
         "memories": memories,
         "requires_clinical_review": False,

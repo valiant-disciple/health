@@ -73,10 +73,11 @@ def build_interpret_user_prompt(context, lab_results: list) -> str:
 
     results_lines = []
     for r in lab_results:
+        ref = r.get("ref_range_text") or f"{r.get('ref_range_low')}-{r.get('ref_range_high')}"
         results_lines.append(
             f"- {r.get('loinc_name','?')} (LOINC {r.get('loinc_code','?')}): "
             f"{r.get('value_numeric','?')} {r.get('unit','')} "
-            f"[ref: {r.get('ref_range_text') or f\"{r.get('ref_range_low')}-{r.get('ref_range_high')}\"}] "
+            f"[ref: {ref}] "
             f"flag={r.get('flag','none')} status={r.get('status','unknown')}"
         )
 

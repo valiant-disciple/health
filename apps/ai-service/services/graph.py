@@ -24,7 +24,7 @@ async def get_drug_interactions(user_id: str, drug_names: list[str]) -> list[dic
     if len(drug_names) < 2:
         return []
     driver = get_driver()
-    async with driver.session() as session:
+    async with driver.session(database=settings.NEO4J_DATABASE) as session:
         result = await session.run(
             """
             UNWIND $drugs AS drugName
@@ -44,7 +44,7 @@ async def get_drug_interactions(user_id: str, drug_names: list[str]) -> list[dic
 async def get_drug_nutrient_depletions(drug_names: list[str]) -> list[dict]:
     """Query nutrients depleted by a list of medications."""
     driver = get_driver()
-    async with driver.session() as session:
+    async with driver.session(database=settings.NEO4J_DATABASE) as session:
         result = await session.run(
             """
             UNWIND $drugs AS drugName
@@ -61,7 +61,7 @@ async def get_drug_nutrient_depletions(drug_names: list[str]) -> list[dict]:
 async def get_conditions_affecting_biomarker(loinc_code: str) -> list[dict]:
     """Which conditions commonly elevate or reduce this biomarker?"""
     driver = get_driver()
-    async with driver.session() as session:
+    async with driver.session(database=settings.NEO4J_DATABASE) as session:
         result = await session.run(
             """
             MATCH (b:Biomarker {code: $code})

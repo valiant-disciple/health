@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 import structlog
 
 from config import settings
-from routers import interpret, chat, extract
+from routers import interpret, chat, extract, ocr, wearables
 from services.memory import init_graphiti, close_graphiti
 
 log = structlog.get_logger()
@@ -37,6 +37,8 @@ app.add_middleware(
 app.include_router(interpret.router, prefix="/interpret", tags=["interpret"])
 app.include_router(chat.router,      prefix="/chat",      tags=["chat"])
 app.include_router(extract.router,   prefix="/extract",   tags=["extract"])
+app.include_router(ocr.router,       prefix="/ocr",       tags=["ocr"])
+app.include_router(wearables.router, prefix="/wearables", tags=["wearables"])
 
 
 @app.get("/health")

@@ -1,4 +1,4 @@
-import { createServerClient } from "@supabase/ssr"
+import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { cookies } from "next/headers"
 import type { Database } from "@health/db/types"
 
@@ -13,13 +13,14 @@ export async function createClient() {
         getAll() {
           return cookieStore.getAll()
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: { name: string; value: string; options: CookieOptions }[]) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
+            for (const { name, value, options } of cookiesToSet) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              cookieStore.set(name, value, options as any)
+            }
           } catch {
-            // Server Component — cookie writes ignored
+            // Called from Server Component — writes ignored, middleware handles refresh
           }
         },
       },
@@ -35,8 +36,12 @@ export async function createServiceClient() {
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       cookies: {
-        getAll() { return cookieStore.getAll() },
-        setAll() {},
+        getAll() {
+          return cookieStore.getAll()
+        },
+        setAll() {
+          // service role client — no cookie writes needed
+        },
       },
     }
   )

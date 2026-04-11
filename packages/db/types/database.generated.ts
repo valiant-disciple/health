@@ -16,14 +16,30 @@ export type Database = {
           activity_level: string | null
           health_goals: string[] | null
           dietary_restrictions: string[] | null
-          food_preferences: Record<string, unknown>
+          food_preferences: Record<string, unknown> | null
           onboarding_complete: boolean
           timezone: string
           created_at: string
           updated_at: string
         }
-        Insert: Partial<Database["public"]["Tables"]["user_profile"]["Row"]> & { id: string }
+        Insert: {
+          id: string
+          display_name?: string | null
+          date_of_birth?: string | null
+          sex?: string | null
+          height_cm?: number | null
+          weight_kg?: number | null
+          activity_level?: string | null
+          health_goals?: string[] | null
+          dietary_restrictions?: string[] | null
+          food_preferences?: Record<string, unknown> | null
+          onboarding_complete?: boolean
+          timezone?: string
+          created_at?: string
+          updated_at?: string
+        }
         Update: Partial<Database["public"]["Tables"]["user_profile"]["Row"]>
+        Relationships: []
       }
       health_events: {
         Row: {
@@ -51,12 +67,33 @@ export type Database = {
           embedding_id: string | null
           created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["health_events"]["Row"], "id" | "recorded_at" | "created_at"> & {
+        Insert: {
           id?: string
+          user_id: string
+          event_type: string
+          occurred_at: string
           recorded_at?: string
+          source: string
+          source_device?: string | null
+          biomarker_code?: string | null
+          biomarker_name?: string | null
+          value_numeric?: number | null
+          value_text?: string | null
+          unit?: string | null
+          reference_low?: number | null
+          reference_high?: number | null
+          personal_target?: number | null
+          status?: string | null
+          confidence?: string
+          detail_table?: string | null
+          detail_id?: string | null
+          valid_from?: string
+          valid_until?: string | null
+          embedding_id?: string | null
           created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["health_events"]["Row"]>
+        Relationships: []
       }
       lab_reports: {
         Row: {
@@ -73,11 +110,22 @@ export type Database = {
           spike_report_id: string | null
           created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["lab_reports"]["Row"], "id" | "created_at"> & {
+        Insert: {
           id?: string
+          user_id: string
+          file_path: string
+          file_name?: string | null
+          report_date?: string | null
+          lab_name?: string | null
+          ordering_provider?: string | null
+          ocr_raw?: string | null
+          processing_status?: string
+          processed_at?: string | null
+          spike_report_id?: string | null
           created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["lab_reports"]["Row"]>
+        Relationships: []
       }
       lab_results: {
         Row: {
@@ -99,11 +147,27 @@ export type Database = {
           occurred_at: string
           created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["lab_results"]["Row"], "id" | "created_at"> & {
+        Insert: {
           id?: string
+          report_id: string
+          user_id: string
+          health_event_id?: string | null
+          loinc_code: string
+          loinc_name: string
+          display_name?: string | null
+          value_numeric?: number | null
+          value_text?: string | null
+          unit?: string | null
+          ref_range_low?: number | null
+          ref_range_high?: number | null
+          ref_range_text?: string | null
+          status?: string | null
+          flag?: string | null
+          occurred_at: string
           created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["lab_results"]["Row"]>
+        Relationships: []
       }
       medications: {
         Row: {
@@ -132,12 +196,34 @@ export type Database = {
           created_at: string
           updated_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["medications"]["Row"], "id" | "created_at" | "updated_at"> & {
+        Insert: {
           id?: string
+          user_id: string
+          name: string
+          rxnorm_code?: string | null
+          ndc_code?: string | null
+          generic_name?: string | null
+          brand_name?: string | null
+          dose_amount?: number | null
+          dose_unit?: string | null
+          frequency?: string | null
+          route?: string | null
+          timing?: string | null
+          indication?: string | null
+          prescribing_provider?: string | null
+          started_date: string
+          stopped_date?: string | null
+          status?: string
+          last_confirmed_at?: string
+          source?: string
+          notes?: string | null
+          valid_from?: string
+          valid_until?: string | null
           created_at?: string
           updated_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["medications"]["Row"]>
+        Relationships: []
       }
       health_conditions: {
         Row: {
@@ -155,43 +241,137 @@ export type Database = {
           valid_until: string | null
           created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["health_conditions"]["Row"], "id" | "created_at"> & {
-          id?: string; created_at?: string
+        Insert: {
+          id?: string
+          user_id: string
+          name: string
+          icd10_code?: string | null
+          snomed_code?: string | null
+          severity?: string | null
+          diagnosed_at?: string | null
+          resolved_at?: string | null
+          source?: string
+          notes?: string | null
+          valid_from?: string
+          valid_until?: string | null
+          created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["health_conditions"]["Row"]>
+        Relationships: []
       }
       conversations: {
         Row: {
-          id: string; user_id: string; context_type: string
-          context_id: string | null; title: string | null; summary: string | null
-          created_at: string; updated_at: string
+          id: string
+          user_id: string
+          context_type: string
+          context_id: string | null
+          title: string | null
+          summary: string | null
+          created_at: string
+          updated_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["conversations"]["Row"], "id" | "created_at" | "updated_at"> & {
-          id?: string; created_at?: string; updated_at?: string
+        Insert: {
+          id?: string
+          user_id: string
+          context_type: string
+          context_id?: string | null
+          title?: string | null
+          summary?: string | null
+          created_at?: string
+          updated_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["conversations"]["Row"]>
+        Relationships: []
       }
       messages: {
         Row: {
-          id: string; conversation_id: string; user_id: string
-          role: string; content: string; tool_calls: unknown | null
-          citations: unknown | null; langfuse_trace: string | null; created_at: string
+          id: string
+          conversation_id: string
+          user_id: string
+          role: string
+          content: string
+          tool_calls: unknown | null
+          citations: unknown | null
+          langfuse_trace: string | null
+          created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["messages"]["Row"], "id" | "created_at"> & {
-          id?: string; created_at?: string
+        Insert: {
+          id?: string
+          conversation_id: string
+          user_id: string
+          role: string
+          content: string
+          tool_calls?: unknown | null
+          citations?: unknown | null
+          langfuse_trace?: string | null
+          created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["messages"]["Row"]>
+        Relationships: []
       }
       health_facts: {
         Row: {
-          id: string; user_id: string; fact_type: string; content: string
-          confidence: number; supporting_events: string[] | null; graphiti_id: string | null
-          valid_from: string; valid_until: string | null; created_at: string
+          id: string
+          user_id: string
+          fact_type: string
+          content: string
+          confidence: number
+          supporting_events: string[] | null
+          graphiti_id: string | null
+          valid_from: string
+          valid_until: string | null
+          created_at: string
         }
-        Insert: Omit<Database["public"]["Tables"]["health_facts"]["Row"], "id" | "created_at"> & {
-          id?: string; created_at?: string
+        Insert: {
+          id?: string
+          user_id: string
+          fact_type: string
+          content: string
+          confidence?: number
+          supporting_events?: string[] | null
+          graphiti_id?: string | null
+          valid_from?: string
+          valid_until?: string | null
+          created_at?: string
         }
         Update: Partial<Database["public"]["Tables"]["health_facts"]["Row"]>
+        Relationships: []
+      }
+      wearable_connections: {
+        Row: {
+          id: string
+          user_id: string
+          provider: string
+          status: string
+          access_token: string | null
+          refresh_token: string | null
+          token_expires_at: string | null
+          scope: string | null
+          provider_user_id: string | null
+          last_synced_at: string | null
+          sync_cursor: string | null
+          metadata: Record<string, unknown> | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          provider: string
+          status?: string
+          access_token?: string | null
+          refresh_token?: string | null
+          token_expires_at?: string | null
+          scope?: string | null
+          provider_user_id?: string | null
+          last_synced_at?: string | null
+          sync_cursor?: string | null
+          metadata?: Record<string, unknown> | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: Partial<Database["public"]["Tables"]["wearable_connections"]["Row"]>
+        Relationships: []
       }
     }
     Views: Record<string, never>

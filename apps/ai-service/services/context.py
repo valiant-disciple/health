@@ -5,14 +5,17 @@ Never passes raw clinical text to the LLM — only structured provenance-tracked
 """
 from __future__ import annotations
 import asyncio
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
+import structlog
 import tiktoken
 from supabase import AsyncClient
 
 from config import settings
 from services.db import get_supabase
+
+log = structlog.get_logger()
 
 ENC = tiktoken.get_encoding("cl100k_base")
 
@@ -115,12 +118,27 @@ async def assemble_patient_artifact(user_id: str, focus: str = "general") -> Pat
     compressed_labs = _compress_labs(labs)
     trends          = _extract_trends(labs)
 
+    # Query Neo4j for drug interactions if ≥2 active meds
+    drug_interactions: list = []
+    if len(meds) >= 2:
+        try:
+            from services.graph import get_drug_interactions
+            drug_names = [
+                m.get("generic_name") or m.get("brand_name") or m.get("name", "")
+                for m in meds
+                if m.get("generic_name") or m.get("brand_name") or m.get("name")
+            ]
+            if len(drug_names) >= 2:
+                drug_interactions = await get_drug_interactions(user_id, drug_names)
+        except Exception as e:
+            log.error("context.drug_interactions_failed", error=str(e))
+
     artifact = PatientArtifact(
         user_id=user_id,
         demographics=demographics,
         active_conditions=conditions,
         active_medications=meds,
-        drug_interactions=[],          # populated by graph service when needed
+        drug_interactions=drug_interactions,
         recent_labs=compressed_labs,
         key_trends=trends,
         health_facts=facts,
@@ -183,8 +201,39 @@ def _compute_trend(readings: list) -> str:
 
 
 def _extract_trends(labs: list) -> list:
-    """Find biomarkers with significant change."""
-    return []  # expanded in Day 6
+    """Find biomarkers with ≥10% directional change across the last two readings."""
+    by_code: dict[str, list] = {}
+    for lab in labs:
+        code = lab.get("biomarker_code") or "unknown"
+        by_code.setdefault(code, []).append(lab)
+
+    trends = []
+    for code, readings in by_code.items():
+        readings.sort(key=lambda x: x["occurred_at"])
+        if len(readings) < 2:
+            continue
+        prev  = readings[-2].get("value_numeric") or 0
+        latest = readings[-1].get("value_numeric") or 0
+        if prev == 0:
+            continue
+        pct = (latest - prev) / abs(prev)
+        if abs(pct) < 0.10:
+            continue
+        direction = "↑" if pct > 0 else "↓"
+        trends.append({
+            "biomarker":  readings[-1].get("biomarker_name", code),
+            "loinc":      code,
+            "direction":  direction,
+            "pct_change": round(pct * 100, 1),
+            "prev_value": prev,
+            "latest_value": latest,
+            "status":     readings[-1].get("status", "unknown"),
+            "date":       readings[-1]["occurred_at"][:10],
+        })
+
+    # Most significant first
+    trends.sort(key=lambda t: abs(t["pct_change"]), reverse=True)
+    return trends[:5]
 
 
 def _trim_to_budget(artifact: PatientArtifact) -> PatientArtifact:

@@ -1,55 +1,53 @@
 # Web framework
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
-python-multipart==0.0.20
+fastapi==0.135.3
+uvicorn[standard]==0.44.0
+python-multipart==0.0.24
 
-# Anthropic
-anthropic==0.45.0
+# OpenAI
+openai==2.31.0
 
 # LangGraph + LangChain
-langgraph==0.2.72
-langchain-anthropic==0.3.4
-langchain-core==0.3.34
-
-# DSPy
-dspy-ai==2.6.0
+langgraph==1.1.6
+langgraph-prebuilt==1.0.9
+langchain==1.2.15
+langchain-openai==1.1.12
+langchain-core==1.2.28
+langchain-community==0.3.31
+langchain-text-splitters==0.3.11
 
 # Supabase
-supabase==2.13.0
+supabase==2.28.3
 
 # Neo4j
-neo4j==5.27.0
+neo4j==5.28.3
 
 # Vector DB
-qdrant-client==1.13.1
-fastembed==0.4.2
+qdrant-client==1.17.1
+fastembed==0.8.0
 
-# Memory
-graphiti-core==0.4.1
-mem0ai==0.1.39
+# Bi-temporal knowledge graph
+graphiti-core==0.28.2
+
+# Multi-scope memory
+mem0ai==1.0.11
 
 # Guardrails
-llm-guard==0.3.14
-nemoguardrails==0.11.0
+nemoguardrails==0.21.0        # L2 dialog rails
+presidio-analyzer==2.2.362    # L1/L3 PHI/PII scan (Python 3.13 compatible)
+presidio-anonymizer==2.2.362
 
 # Observability
-langfuse==2.59.3
+langfuse==4.1.0
 
-# Evaluation (CI)
-deepeval==1.4.9
-ragas==0.2.6
-datasets==3.2.0
-
-# Jobs / Async
-inngest==0.4.18
-redis==5.2.1
-httpx==0.28.1
+# PDF
+pypdf==4.3.1
 
 # Utilities
-pydantic==2.10.6
-pydantic-settings==2.7.1
+pydantic==2.12.5
+pydantic-settings==2.13.1
+python-dotenv==1.2.2
 python-jose[cryptography]==3.3.0
-python-dotenv==1.0.1
-tiktoken==0.9.0
+tiktoken==0.12.0
 tenacity==9.0.0
-structlog==25.1.0
+structlog==25.5.0
+httpx==0.28.1

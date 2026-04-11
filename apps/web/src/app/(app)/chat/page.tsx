@@ -1,8 +1,23 @@
-export default function ChatPage() {
+import { getOrCreateConversation, listConversations } from "./actions"
+import { ChatInterface } from "./_components/chat-interface"
+
+export default async function ChatPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ c?: string }>
+}) {
+  const { c } = await searchParams
+  const [{ conversation, messages, userId }, conversations] = await Promise.all([
+    getOrCreateConversation(c),
+    listConversations(),
+  ])
+
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-gray-900">Health Q&A</h1>
-      <p className="mt-1 text-sm text-gray-500">Day 9 — AI chat coming</p>
-    </div>
+    <ChatInterface
+      conversationId={conversation.id}
+      userId={userId}
+      initialMessages={messages}
+      conversations={conversations}
+    />
   )
 }

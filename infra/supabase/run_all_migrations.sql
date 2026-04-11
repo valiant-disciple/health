@@ -205,12 +205,10 @@ CREATE TRIGGER update_medications_updated_at
   BEFORE UPDATE ON medications
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
--- ─── 005: Wearable readings (TimescaleDB) ─────────────────────────────────────
--- NOTE: Enable timescaledb extension in Supabase dashboard first:
---   Database → Extensions → search "timescaledb" → Enable
--- If extension is not yet enabled, skip this block and run it separately after enabling.
+-- ─── 005: Wearable readings (plain Postgres — TimescaleDB not available on Supabase free tier) ──
 
 CREATE TABLE IF NOT EXISTS wearable_readings (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   time        TIMESTAMPTZ NOT NULL,
   user_id     UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   device      TEXT NOT NULL,
@@ -218,13 +216,14 @@ CREATE TABLE IF NOT EXISTS wearable_readings (
   value       FLOAT NOT NULL,
   unit        TEXT,
   confidence  FLOAT DEFAULT 1.0,
-  source_raw  JSONB
+  source_raw  JSONB,
+  created_at  TIMESTAMPTZ DEFAULT now()
 );
-
-SELECT create_hypertable('wearable_readings', 'time', if_not_exists => TRUE);
 
 CREATE INDEX IF NOT EXISTS idx_wr_user_metric ON wearable_readings(user_id, metric, time DESC);
 CREATE INDEX IF NOT EXISTS idx_wr_device      ON wearable_readings(user_id, device, time DESC);
+-- Partition-friendly: most queries filter by user + time range
+CREATE INDEX IF NOT EXISTS idx_wr_user_time   ON wearable_readings(user_id, time DESC);
 
 ALTER TABLE wearable_readings ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Users can manage own wearable data"

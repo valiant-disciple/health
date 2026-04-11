@@ -1,0 +1,73 @@
+# ─── Input rails ──────────────────────────────────────────────────────────────
+
+define user express crisis
+  "I want to hurt myself"
+  "I'm thinking about suicide"
+  "I want to kill myself"
+  "I feel like ending it all"
+  "I don't want to live anymore"
+
+define bot redirect to emergency
+  "I'm really concerned about what you've shared. Please contact emergency services (911) or a crisis line (988 Suicide & Crisis Lifeline) right away. You don't have to face this alone."
+
+define flow check crisis
+  user express crisis
+  bot redirect to emergency
+  stop
+
+define user ask to prescribe
+  "prescribe me"
+  "what medication should I take"
+  "can you write me a prescription"
+  "give me a diagnosis"
+  "tell me what drug to take"
+
+define bot refuse prescribe request
+  "I'm not able to prescribe medications or provide a diagnosis — that's something only your doctor can do. I can help you understand your lab results and prepare questions to ask your healthcare provider."
+
+define flow check prescribe request
+  user ask to prescribe
+  bot refuse prescribe request
+
+define user ask off topic
+  "write me code"
+  "help me write an essay"
+  "what's the weather"
+  "tell me a joke"
+  "who won the game"
+  "write me a poem"
+
+define bot refuse off topic
+  "I'm here specifically to help with your health data — lab results, medications, and wellness questions. For other topics, there are better tools available!"
+
+define flow check off topic
+  user ask off topic
+  bot refuse off topic
+
+# ─── Output rails ─────────────────────────────────────────────────────────────
+
+define bot make diagnosis claim
+  "you have diabetes"
+  "you have cancer"
+  "you are diagnosed with"
+  "my diagnosis is"
+  "you definitely have"
+
+define bot safe diagnosis redirect
+  "Based on these results, it would be worth discussing this with your doctor. I can help you understand what the values mean and what questions to ask, but a formal diagnosis requires a clinical evaluation."
+
+define flow check diagnosis claim
+  bot make diagnosis claim
+  bot safe diagnosis redirect
+
+define bot make prescribe output
+  "you should take [medication]"
+  "I recommend taking [dosage]"
+  "start [medication] immediately"
+
+define bot safe prescribe redirect
+  "Rather than recommending a specific medication, I'd suggest bringing these results to your doctor who can evaluate the full picture and prescribe appropriately."
+
+define flow check prescribe output
+  bot make prescribe output
+  bot safe prescribe redirect

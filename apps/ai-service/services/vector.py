@@ -122,6 +122,49 @@ async def upsert_health_event(event_id: str, user_id: str, event: dict):
     )
 
 
+async def search_medical_kb(
+    query: str,
+    categories: list[str] | None = None,
+    limit: int = 5,
+) -> list[dict]:
+    """
+    Search the 'medical_kb' Qdrant collection (clinical guidelines, nutrient facts,
+    drug monographs). This collection is indexed offline and is NOT user-scoped.
+    """
+    qdrant = get_qdrant()
+    dense  = get_dense_model()
+    sparse = get_sparse_model()
+
+    dense_vec  = list(dense.embed([query]))[0]
+    sparse_vec = list(sparse.embed([query]))[0]
+
+    must = []
+    if categories:
+        from qdrant_client.models import FieldCondition, MatchAny
+        must.append(FieldCondition(key="category", match=MatchAny(any=categories)))
+
+    try:
+        results = await qdrant.query_points(
+            collection_name="medical_kb",
+            prefetch=[
+                Prefetch(query=dense_vec.tolist(), using="dense", limit=20),
+                Prefetch(
+                    query={"indices": sparse_vec.indices.tolist(), "values": sparse_vec.values.tolist()},
+                    using="sparse",
+                    limit=20,
+                ),
+            ],
+            query=FusionQuery(fusion=Fusion.RRF),
+            query_filter=Filter(must=must) if must else None,
+            limit=limit,
+            with_payload=True,
+        )
+        return [r.payload for r in results.points if r.payload]
+    except Exception as e:
+        log.error("vector.kb_search_failed", error=str(e))
+        return []
+
+
 def _build_summary(event: dict) -> str:
     parts = []
     if event.get("biomarker_name"):

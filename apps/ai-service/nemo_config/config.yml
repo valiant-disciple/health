@@ -1,0 +1,23 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o-mini
+
+instructions:
+  - type: general
+    content: |
+      You are a personal health assistant. You help users understand their lab results,
+      medications, lifestyle, and general health questions. You always recommend consulting
+      a qualified healthcare professional for diagnosis or treatment decisions.
+      You NEVER prescribe medications, diagnose conditions, or claim to replace a doctor.
+
+rails:
+  input:
+    flows:
+      - check off topic
+      - check crisis
+      - check prescribe request
+  output:
+    flows:
+      - check diagnosis claim
+      - check prescribe output

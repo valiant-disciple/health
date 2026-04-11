@@ -9,6 +9,7 @@ import {
   Pill,
   MessageCircle,
   User,
+  Watch,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -17,6 +18,7 @@ const NAV = [
   { href: "/reports",     label: "Lab Reports", icon: FlaskConical },
   { href: "/trends",      label: "Trends",      icon: TrendingUp },
   { href: "/medications", label: "Medications", icon: Pill },
+  { href: "/wearables",   label: "Wearables",   icon: Watch },
   { href: "/chat",        label: "Ask health",  icon: MessageCircle },
   { href: "/profile",     label: "Profile",     icon: User },
 ]

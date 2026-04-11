@@ -40,17 +40,12 @@ async def query_medical_kb(query: str, categories: list[str] | None = None) -> s
     Search clinical guidelines and medical knowledge base using hybrid search.
     Use for evidence-based information about conditions, nutrients, or biomarkers.
     """
-    from services.vector import hybrid_search
-    results = await hybrid_search(
-        user_id="__knowledge__",
-        query=query,
-        event_types=categories,
-        limit=5,
-    )
+    from services.vector import search_medical_kb
+    results = await search_medical_kb(query=query, categories=categories, limit=5)
     if not results:
         return "No relevant guidelines found."
     return "\n\n".join(
-        f"[{r.get('source','KB')}] {r.get('summary_text', r.get('value_text', ''))}"
+        f"[{r.get('source','KB')}] {r.get('summary_text', r.get('content', ''))}"
         for r in results
     )
 
@@ -118,6 +113,53 @@ async def get_lab_trends(user_id: str, biomarker_code: str, months: int = 6) -> 
 
 
 @tool
+async def mem0_recall(user_id: str, query: str, scope: str | None = None) -> str:
+    """
+    Recall specific long-term memories about the patient.
+    scope options:
+      'clinical'    — lab history, diagnoses, wearable trends
+      'preference'  — dietary preferences, communication style, stated goals
+      'behavioral'  — exercise habits, sleep patterns, lifestyle factors
+      None          — search all memory types
+    Use when you need to recall something specific the patient mentioned in a prior session,
+    or when the pre-loaded memory context doesn't have enough detail.
+    """
+    from services.memory import mem0_recall as _recall
+    results = await _recall(user_id, query, scope=scope)
+    if not results:
+        return "No relevant memories found."
+    return "\n".join(
+        f"• {r['memory']}" + (f" (score: {r['score']:.2f})" if r.get("score") else "")
+        for r in results
+    )
+
+
+@tool
+async def retrieve_graph_context(user_id: str, query: str) -> str:
+    """
+    Query the bi-temporal health knowledge graph for facts about the patient.
+    Returns extracted facts and episodes with temporal validity windows.
+    Use this for questions about trends over time, historical changes, or
+    relationship patterns — e.g. "has my HbA1c been rising?",
+    "when did my resting HR start increasing?", "what happened after I started metformin?".
+    """
+    from services.memory import query_graph_context
+    results = await query_graph_context(user_id, query, num_results=10)
+    if not results:
+        return "No relevant facts found in the health knowledge graph for this query."
+
+    lines: list[str] = []
+    for r in results:
+        temporal = ""
+        if r.get("valid_at"):
+            temporal += f" [from {r['valid_at'][:10]}]"
+        if r.get("invalid_at"):
+            temporal += f" [until {r['invalid_at'][:10]}]"
+        lines.append(f"• {r['content']}{temporal}")
+    return "\n".join(lines)
+
+
+@tool
 async def flag_for_clinical_review(user_id: str, reason: str, urgency: str = "routine") -> str:
     """
     Flag a finding for clinical review. Use when:
@@ -142,6 +184,8 @@ async def flag_for_clinical_review(user_id: str, reason: str, urgency: str = "ro
 def get_tools():
     return [
         get_user_health_context,
+        mem0_recall,
+        retrieve_graph_context,
         query_drug_interactions,
         query_medical_kb,
         interpret_lab_result,
