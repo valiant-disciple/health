@@ -1,13 +1,19 @@
 """6 core LangGraph tools for the health agent."""
 from __future__ import annotations
+from typing import Annotated
+
 from langchain_core.tools import tool
+from langgraph.prebuilt import InjectedState
 
 from services.context import assemble_patient_artifact
 from services.memory import get_relevant_memories
 
 
 @tool
-async def get_user_health_context(user_id: str, focus: str = "general") -> str:
+async def get_user_health_context(
+    focus: str = "general",
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Get a structured summary of the user's health context.
     Includes conditions, medications, recent lab results, trends, and known health facts.
@@ -18,7 +24,10 @@ async def get_user_health_context(user_id: str, focus: str = "general") -> str:
 
 
 @tool
-async def query_drug_interactions(user_id: str, drug_names: list[str]) -> str:
+async def query_drug_interactions(
+    drug_names: list[str],
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Check Neo4j for drug-drug and drug-nutrient interactions.
     Pass a list of drug names (generic or brand).
@@ -52,10 +61,10 @@ async def query_medical_kb(query: str, categories: list[str] | None = None) -> s
 
 @tool
 async def interpret_lab_result(
-    user_id: str,
     loinc_code: str,
     value: float,
     unit: str,
+    user_id: Annotated[str, InjectedState("user_id")] = "",
 ) -> str:
     """
     Contextualize a specific lab value against the user's own history.
@@ -86,7 +95,11 @@ async def interpret_lab_result(
 
 
 @tool
-async def get_lab_trends(user_id: str, biomarker_code: str, months: int = 6) -> str:
+async def get_lab_trends(
+    biomarker_code: str,
+    months: int = 6,
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Get temporal trend for a specific biomarker over the past N months.
     Returns list of readings with dates, values, and trend direction.
@@ -113,7 +126,11 @@ async def get_lab_trends(user_id: str, biomarker_code: str, months: int = 6) -> 
 
 
 @tool
-async def mem0_recall(user_id: str, query: str, scope: str | None = None) -> str:
+async def mem0_recall(
+    query: str,
+    scope: str | None = None,
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Recall specific long-term memories about the patient.
     scope options:
@@ -135,7 +152,10 @@ async def mem0_recall(user_id: str, query: str, scope: str | None = None) -> str
 
 
 @tool
-async def retrieve_graph_context(user_id: str, query: str) -> str:
+async def retrieve_graph_context(
+    query: str,
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Query the bi-temporal health knowledge graph for facts about the patient.
     Returns extracted facts and episodes with temporal validity windows.
@@ -160,7 +180,11 @@ async def retrieve_graph_context(user_id: str, query: str) -> str:
 
 
 @tool
-async def flag_for_clinical_review(user_id: str, reason: str, urgency: str = "routine") -> str:
+async def flag_for_clinical_review(
+    reason: str,
+    urgency: str = "routine",
+    user_id: Annotated[str, InjectedState("user_id")] = "",
+) -> str:
     """
     Flag a finding for clinical review. Use when:
     - Lab value is critical

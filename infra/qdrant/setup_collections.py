@@ -57,21 +57,12 @@ def create_health_events():
 
 
 def create_mem0_collection():
-    """Mem0 creates its own collection automatically, but pre-create for control."""
-    name = "mem0_health"
-    existing = [c.name for c in client.get_collections().collections]
-    if name in existing:
-        print(f"  {name} already exists — skipping")
-        return
-
-    client.create_collection(
-        collection_name=name,
-        vectors_config={
-            "dense": VectorParams(size=1536, distance=Distance.COSINE)
-        },
-    )
-    client.create_payload_index(name, "user_id", PayloadSchemaType.KEYWORD)
-    print(f"  ✓ {name} created")
+    """
+    Mem0 creates its own `mem0_health` collection at runtime using an unnamed
+    vector. Do NOT pre-create it here — using a named `dense` vector breaks
+    mem0's search path with "Not existing vector name error".
+    """
+    print("  mem0_health — skipping pre-create (mem0 manages its own collection)")
 
 
 def create_knowledge_collection():

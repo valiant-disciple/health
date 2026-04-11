@@ -103,13 +103,13 @@ def get_langfuse_callback():
     """
     if not settings.LANGFUSE_PUBLIC_KEY or not settings.LANGFUSE_SECRET_KEY:
         return None
+    # Ensure the Langfuse client is registered (keys/host) before the callback
+    # looks it up via get_client(public_key=...).
+    if _get_langfuse() is None:
+        return None
     try:
-        from langfuse.callback import CallbackHandler
-        return CallbackHandler(
-            public_key=settings.LANGFUSE_PUBLIC_KEY,
-            secret_key=settings.LANGFUSE_SECRET_KEY,
-            host=settings.LANGFUSE_HOST,
-        )
+        from langfuse.langchain import CallbackHandler
+        return CallbackHandler(public_key=settings.LANGFUSE_PUBLIC_KEY)
     except Exception as e:
         log.warning("tracing.callback_init_failed", error=str(e), exc_info=True)
         return None

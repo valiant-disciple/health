@@ -163,7 +163,13 @@ async def apply_dialog_rails(user_message: str) -> tuple[str, bool]:
         response = await rails.generate_async(
             messages=[{"role": "user", "content": user_message}]
         )
-        # NeMo returns its own refusal message when a rail fires
+        # NeMo 0.21 returns a message dict {"role": ..., "content": ...} when called
+        # with messages=; older versions returned a raw string. Handle both.
+        if isinstance(response, dict):
+            content = response.get("content", "") or ""
+        else:
+            content = response or ""
+
         refusal_signals = [
             "i'm sorry, i can't",
             "cannot help with that",
@@ -171,10 +177,10 @@ async def apply_dialog_rails(user_message: str) -> tuple[str, bool]:
             "please call emergency",
             "i'm not able to",
         ]
-        content = (response or "").lower()
-        if any(sig in content for sig in refusal_signals):
-            log.warning("nemo.dialog_blocked", snippet=content[:120])
-            return response, False
+        content_lower = content.lower()
+        if any(sig in content_lower for sig in refusal_signals):
+            log.warning("nemo.dialog_blocked", snippet=content_lower[:120])
+            return content, False
         return user_message, True
     except Exception as e:
         log.error("nemo.apply_failed", error=str(e), exc_info=True)
