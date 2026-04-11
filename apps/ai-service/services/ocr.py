@@ -111,8 +111,8 @@ async def process_lab_report(report_id: str, user_id: str, file_path: str) -> No
     }).eq("id", report_id).execute()
 
     try:
-        # Download PDF from Supabase Storage (synchronous — not a coroutine)
-        pdf_bytes: bytes = db.storage.from_("lab-reports").download(file_path)
+        # Download PDF from Supabase Storage
+        pdf_bytes: bytes = await db.storage.from_("lab-reports").download(file_path)
         log.info("ocr.downloaded", report_id=report_id, size_kb=len(pdf_bytes) // 1024)
 
         # Extract structured results

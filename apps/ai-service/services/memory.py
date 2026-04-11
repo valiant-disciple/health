@@ -90,15 +90,6 @@ def _get_mem0():
                     "api_key": settings.OPENAI_API_KEY,
                 },
             },
-            # Disable Neo4j graph store — Graphiti handles that
-            "graph_store": {
-                "provider": "neo4j",
-                "config": {
-                    "url":      settings.NEO4J_URI,
-                    "username": settings.NEO4J_USER,
-                    "password": settings.NEO4J_PASSWORD,
-                },
-            },
             "version": "v1.1",
         })
         log.info("mem0.initialized")

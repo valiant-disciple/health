@@ -260,7 +260,7 @@ export async function requestInterpretation(
       "X-User-Id": user.id,
     },
     body: JSON.stringify({ user_id: user.id, report_id: reportId }),
-    signal: AbortSignal.timeout(60000),
+    signal: AbortSignal.timeout(180000),
   })
 
   if (!res.ok) {

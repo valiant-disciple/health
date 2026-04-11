@@ -24,11 +24,11 @@ _windows: dict[tuple[str, str], deque] = defaultdict(deque)
 
 LIMITS: dict[str, tuple[int, int]] = {
     # endpoint → (max_requests, window_seconds)
-    "chat":      (30, 60),
-    "interpret": (10, 60),
-    "ocr":       (5,  60),
-    "wearables": (10, 60),
-    "default":   (60, 60),
+    "chat":      (300, 60),
+    "interpret": (100, 60),
+    "ocr":       (60,  60),
+    "wearables": (100, 60),
+    "default":   (600, 60),
 }
 
 

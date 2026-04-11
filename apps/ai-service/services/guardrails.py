@@ -9,6 +9,7 @@ All layers degrade gracefully: if a service is unavailable the request
 passes through with a warning log rather than failing the user.
 """
 from __future__ import annotations
+import asyncio
 import os
 import structlog
 
@@ -106,7 +107,8 @@ async def scan_user_input(user_message: str) -> tuple[str, bool]:
     2. OpenAI Moderation: block self-harm / violence content
     Returns (sanitized_text, is_allowed).
     """
-    sanitized, _ = _presidio_scan(user_message)
+    loop = asyncio.get_event_loop()
+    sanitized, _ = await loop.run_in_executor(None, _presidio_scan, user_message)
     is_safe = await _openai_moderation(sanitized)
     return sanitized, is_safe
 
@@ -118,7 +120,8 @@ async def scan_llm_output(prompt: str, output: str) -> tuple[str, bool]:
     2. OpenAI Moderation: block harmful output
     Returns (sanitized_output, is_allowed).
     """
-    sanitized, _ = _presidio_scan(output)
+    loop = asyncio.get_event_loop()
+    sanitized, _ = await loop.run_in_executor(None, _presidio_scan, output)
     is_safe = await _openai_moderation(sanitized)
     return sanitized, is_safe
 

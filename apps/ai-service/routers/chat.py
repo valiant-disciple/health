@@ -71,16 +71,22 @@ async def chat(
 
     async def generate():
         full_response = ""
-        async for chunk in run_health_agent(
-            user_id=req.user_id,
-            message=sanitized_input,
-            conversation_id=req.conversation_id,
-            report_id=req.report_id,
-            memories=memories,
-            conversation_history=conversation_history,
-        ):
-            full_response += chunk
-            yield f"data: {json.dumps({'chunk': chunk})}\n\n"
+        try:
+            async for chunk in run_health_agent(
+                user_id=req.user_id,
+                message=sanitized_input,
+                conversation_id=req.conversation_id,
+                report_id=req.report_id,
+                memories=memories,
+                conversation_history=conversation_history,
+            ):
+                full_response += chunk
+                yield f"data: {json.dumps({'chunk': chunk})}\n\n"
+        except Exception as e:
+            log.error("chat.agent_failed", user_id=req.user_id, error=str(e), exc_info=True)
+            yield f"data: {json.dumps({'chunk': 'Sorry, I encountered an error. Please try again.', 'error': True})}\n\n"
+            yield "data: [DONE]\n\n"
+            return
 
         # L3 guardrail: scan full response for PHI leakage / harmful output
         safe_response, output_safe = await scan_llm_output(sanitized_input, full_response)
