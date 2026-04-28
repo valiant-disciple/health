@@ -6,7 +6,6 @@ Lab OCR pipeline
 from __future__ import annotations
 
 import asyncio
-import io
 import json
 import re
 from datetime import datetime, timezone
@@ -18,6 +17,7 @@ from openai import AsyncOpenAI
 
 from config import settings
 from services.db import get_supabase
+from services.pdf_text import extract_pdf_text
 
 log = structlog.get_logger()
 
@@ -166,21 +166,11 @@ async def _spike_process(pdf_bytes: bytes, report_id: str) -> dict:
 # ─── Local fallback: pypdf + GPT-4o-mini ────────────────────────────────────
 
 async def _local_extract(pdf_bytes: bytes, report_id: str) -> dict:
-    text = _extract_pdf_text(pdf_bytes)
+    text = extract_pdf_text(pdf_bytes)
     log.info("ocr.pypdf_extracted", report_id=report_id, chars=len(text))
 
     results = await _gpt_extract(text, report_id)
     return {"results": results, "source": "local"}
-
-
-def _extract_pdf_text(pdf_bytes: bytes) -> str:
-    import pypdf
-
-    reader = pypdf.PdfReader(io.BytesIO(pdf_bytes))
-    pages: list[str] = []
-    for page in reader.pages[:20]:
-        pages.append(page.extract_text() or "")
-    return "\n".join(pages)
 
 
 _LAB_SYSTEM = """\

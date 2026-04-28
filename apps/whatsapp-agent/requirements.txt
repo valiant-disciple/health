@@ -1,0 +1,8 @@
+twilio>=9.0
+fastapi>=0.110
+uvicorn>=0.29
+openai>=1.40
+pypdf>=4.0
+python-dotenv>=1.0
+python-multipart>=0.0.9
+requests>=2.32
