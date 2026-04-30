@@ -1,0 +1,3516 @@
+{
+  "version": "1.0",
+  "biomarker_count": 152,
+  "biomarkers": [
+    {
+      "loinc": "6690-2",
+      "name": "WBC",
+      "full_name": "White Blood Cell Count",
+      "aliases": [
+        "White Blood Cell Count",
+        "Total Leucocyte Count",
+        "TLC",
+        "Leukocyte Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "4.0-11.0 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.5,
+      "critical_high": 30.0,
+      "what_it_measures": "White blood cell count measures the number of white blood cells in your blood.",
+      "clinical_significance": "White blood cells are crucial for fighting infections and responding to inflammation. Abnormal levels can indicate infections, immune system disorders, or bone marrow problems.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "789-8",
+      "name": "RBC",
+      "full_name": "Red Blood Cell Count",
+      "aliases": [
+        "Red Blood Cell Count",
+        "Erythrocyte Count"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^6/uL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "4.7-6.1 10^6/uL",
+      "ref_range_female": "4.2-5.4 10^6/uL",
+      "critical_low": 3.0,
+      "critical_high": 7.0,
+      "what_it_measures": "Red blood cell count measures the number of red blood cells in your blood.",
+      "clinical_significance": "Red blood cell count is important for evaluating overall health and detecting a variety of disorders, including anemia and polycythemia.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "718-7",
+      "name": "Hemoglobin",
+      "full_name": "Hemoglobin",
+      "aliases": [
+        "Hb",
+        "HGB",
+        "Haemoglobin"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "g/dL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "13.5-17.5 g/dL",
+      "ref_range_female": "12.0-16.0 g/dL",
+      "critical_low": 7.0,
+      "critical_high": 20.0,
+      "what_it_measures": "Hemoglobin measures the amount of oxygen-carrying protein in the blood.",
+      "clinical_significance": "Hemoglobin levels are crucial for diagnosing anemia, polycythemia, and other blood disorders. Abnormal levels can indicate issues with oxygen transport in the body.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "4544-3",
+      "name": "Hematocrit",
+      "full_name": "Hematocrit",
+      "aliases": [
+        "HCT",
+        "PCV",
+        "Packed Cell Volume",
+        "Haematocrit"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "41.0-50.0%",
+      "ref_range_female": "36.0-44.0%",
+      "critical_low": 21,
+      "critical_high": 65,
+      "what_it_measures": "Hematocrit measures the proportion of blood volume that is occupied by red blood cells.",
+      "clinical_significance": "Hematocrit levels are important for diagnosing and monitoring conditions like anemia, dehydration, and polycythemia. Abnormal levels can indicate issues with blood volume or red blood cell production.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "787-2",
+      "name": "MCV",
+      "full_name": "Mean Corpuscular Volume",
+      "aliases": [
+        "Mean Corpuscular Volume"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "fL"
+      ],
+      "ref_range_general": "80-100 fL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 70,
+      "critical_high": 110,
+      "what_it_measures": "Mean Corpuscular Volume (MCV) measures the average size of your red blood cells.",
+      "clinical_significance": "MCV is important for diagnosing and classifying types of anemia and other blood disorders. Abnormal MCV values can indicate conditions such as iron deficiency anemia or vitamin B12 deficiency.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "785-6",
+      "name": "MCH",
+      "full_name": "Mean Corpuscular Hemoglobin",
+      "aliases": [
+        "Mean Corpuscular Hemoglobin"
+      ],
+      "category": "cbc",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pg"
+      ],
+      "ref_range_general": "27-33 pg",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Mean Corpuscular Hemoglobin measures the average amount of hemoglobin in a single red blood cell.",
+      "clinical_significance": "It helps in diagnosing and classifying types of anemia and can indicate if red blood cells have the appropriate amount of hemoglobin.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "786-4",
+      "name": "MCHC",
+      "full_name": "Mean Corpuscular Hemoglobin Concentration",
+      "aliases": [
+        "Mean Corpuscular Hemoglobin Concentration"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "g/dL"
+      ],
+      "ref_range_general": "32-36 g/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 30,
+      "critical_high": 37,
+      "what_it_measures": "Mean Corpuscular Hemoglobin Concentration measures the average concentration of hemoglobin in a given volume of red blood cells.",
+      "clinical_significance": "It helps in diagnosing and classifying types of anemia and can indicate issues with red blood cell production or destruction.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "788-0",
+      "name": "RDW",
+      "full_name": "Red Cell Distribution Width",
+      "aliases": [
+        "Red Cell Distribution Width"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "11.5-14.5 %",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Red Cell Distribution Width (RDW) measures the variation in size of your red blood cells.",
+      "clinical_significance": "RDW is used to help diagnose types of anemia and other conditions affecting red blood cells. A high RDW can indicate a greater variation in red blood cell size, which may suggest an underlying health issue.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "777-3",
+      "name": "Platelets",
+      "full_name": "Platelet Count",
+      "aliases": [
+        "Platelet Count",
+        "PLT"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "150-450 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 20,
+      "critical_high": 1000,
+      "what_it_measures": "Platelet count measures the number of platelets in your blood, which are essential for blood clotting.",
+      "clinical_significance": "Abnormal platelet counts can indicate various conditions such as bleeding disorders, bone marrow diseases, or the effects of certain medications. Low platelet counts can lead to excessive bleeding, while high counts may increase the risk of thrombosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "32623-1",
+      "name": "MPV",
+      "full_name": "Mean Platelet Volume",
+      "aliases": [
+        "Mean Platelet Volume"
+      ],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "fL"
+      ],
+      "ref_range_general": "7.5-11.5 fL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Mean Platelet Volume measures the average size of platelets in the blood.",
+      "clinical_significance": "It can provide information about platelet production in bone marrow and is often used to help diagnose or monitor conditions affecting platelet count or function.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "770-8",
+      "name": "Neutrophils %",
+      "full_name": "Neutrophils Percentage",
+      "aliases": [
+        "Neutrophils Percentage"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "40-70%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 20,
+      "critical_high": 80,
+      "what_it_measures": "The percentage of neutrophils in the blood, which are a type of white blood cell important for fighting infections.",
+      "clinical_significance": "Neutrophil percentage is used to assess the body's response to infections, inflammation, and other conditions affecting the immune system. Abnormal levels can indicate infections, inflammation, or bone marrow disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "736-9",
+      "name": "Lymphocytes %",
+      "full_name": "Lymphocytes Percentage",
+      "aliases": [
+        "Lymphocytes Percentage"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "20-40%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": 60,
+      "what_it_measures": "The percentage of lymphocytes in the blood, which are a type of white blood cell important for immune function.",
+      "clinical_significance": "Lymphocyte percentage helps assess the immune system's status and can indicate conditions such as infections, autoimmune disorders, or hematologic diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5905-5",
+      "name": "Monocytes %",
+      "full_name": "Monocytes Percentage",
+      "aliases": [
+        "Monocytes Percentage"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "2-10%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The percentage of monocytes in the blood, a type of white blood cell involved in immune response.",
+      "clinical_significance": "Monocyte percentage can indicate immune system activity; elevated levels may suggest infection, inflammation, or other immune responses, while low levels might indicate bone marrow issues or certain infections.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "713-8",
+      "name": "Eosinophils %",
+      "full_name": "Eosinophils Percentage",
+      "aliases": [
+        "Eosinophils Percentage"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "1-4%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The percentage of eosinophils, a type of white blood cell, in the blood.",
+      "clinical_significance": "Eosinophils are involved in the body's immune response, particularly in allergic reactions and parasitic infections. Abnormal levels can indicate allergies, infections, or other medical conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "706-2",
+      "name": "Basophils %",
+      "full_name": "Basophils Percentage",
+      "aliases": [
+        "Basophils Percentage"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "0.0-2.0%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The percentage of basophils, a type of white blood cell, in the blood.",
+      "clinical_significance": "Basophils are involved in immune responses, particularly allergic reactions and inflammation. Abnormal levels can indicate allergic conditions, infections, or other immune-related disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "751-8",
+      "name": "Neutrophils Abs",
+      "full_name": "Neutrophils Absolute Count",
+      "aliases": [
+        "Neutrophils Absolute Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "1.5-8.0 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 0.5,
+      "critical_high": 30.0,
+      "what_it_measures": "It measures the number of neutrophils, a type of white blood cell, in the blood.",
+      "clinical_significance": "Neutrophils are crucial for fighting infections, and their count can indicate the presence of infection, inflammation, or other medical conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "731-0",
+      "name": "Lymphocytes Abs",
+      "full_name": "Lymphocytes Absolute Count",
+      "aliases": [
+        "Lymphocytes Absolute Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "1.0-3.0 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 0.5,
+      "critical_high": 5.0,
+      "what_it_measures": "The absolute count of lymphocytes, a type of white blood cell, in the blood.",
+      "clinical_significance": "Lymphocyte counts can indicate the state of the immune system, with low counts suggesting potential immune suppression and high counts indicating possible infection or inflammation.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "742-7",
+      "name": "Monocytes Abs",
+      "full_name": "Monocytes Absolute Count",
+      "aliases": [
+        "Monocytes Absolute Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "0.2-0.8 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Monocytes absolute count measures the number of monocytes, a type of white blood cell, in the blood.",
+      "clinical_significance": "Monocytes play a crucial role in the immune system by fighting infections and aiding in tissue repair. Abnormal levels can indicate infections, inflammatory conditions, or bone marrow disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "711-2",
+      "name": "Eosinophils Abs",
+      "full_name": "Eosinophils Absolute Count",
+      "aliases": [
+        "Eosinophils Absolute Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "0.0-0.5 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Eosinophils are a type of white blood cell involved in allergic reactions and fighting parasitic infections.",
+      "clinical_significance": "An elevated eosinophil count can indicate allergic reactions, parasitic infections, or certain autoimmune diseases, while a low count is usually not clinically significant.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "704-7",
+      "name": "Basophils Abs",
+      "full_name": "Basophils Absolute Count",
+      "aliases": [
+        "Basophils Absolute Count"
+      ],
+      "category": "hematology",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "10^3/uL"
+      ],
+      "ref_range_general": "0.0-0.2 10^3/uL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The absolute count of basophils, a type of white blood cell, in the blood.",
+      "clinical_significance": "Basophils play a role in immune response and inflammation. Abnormal levels can indicate allergic reactions, infections, or blood disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2345-7",
+      "name": "Glucose",
+      "full_name": "Glucose (Fasting)",
+      "aliases": [
+        "Glucose (Fasting)",
+        "Fasting Blood Sugar",
+        "FBS",
+        "Blood Glucose Fasting",
+        "Plasma Glucose"
+      ],
+      "category": "metabolic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "70-99 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 40,
+      "critical_high": 400,
+      "what_it_measures": "The glucose (fasting) test measures the level of glucose in the blood after a period of fasting, typically 8-12 hours.",
+      "clinical_significance": "Fasting glucose levels are used to diagnose and monitor diabetes and prediabetes, as well as to evaluate how well the body is managing blood sugar levels.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "3094-0",
+      "name": "BUN",
+      "full_name": "Blood Urea Nitrogen",
+      "aliases": [
+        "Blood Urea Nitrogen",
+        "Urea Nitrogen"
+      ],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "6-20 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 100,
+      "what_it_measures": "Blood Urea Nitrogen measures the amount of nitrogen in your blood that comes from the waste product urea.",
+      "clinical_significance": "It is used to assess kidney function and can indicate how well your kidneys are working. Elevated levels may suggest kidney dysfunction, dehydration, or other medical conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2160-0",
+      "name": "Creatinine",
+      "full_name": "Creatinine",
+      "aliases": [
+        "Serum Creatinine",
+        "Creat"
+      ],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "0.74-1.35 mg/dL",
+      "ref_range_female": "0.59-1.04 mg/dL",
+      "critical_low": null,
+      "critical_high": 5.0,
+      "what_it_measures": "Creatinine measures the level of creatinine in the blood, which is a waste product from muscle metabolism.",
+      "clinical_significance": "Creatinine levels are used to assess kidney function; elevated levels may indicate impaired kidney function or kidney disease.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "62238-1",
+      "name": "eGFR",
+      "full_name": "Estimated Glomerular Filtration Rate (CKD-EPI)",
+      "aliases": [
+        "Estimated Glomerular Filtration Rate (CKD-EPI)"
+      ],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mL/min/1.73m2"
+      ],
+      "ref_range_general": "≥ 60 mL/min/1.73m2",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 15,
+      "critical_high": null,
+      "what_it_measures": "The estimated glomerular filtration rate (eGFR) assesses how well your kidneys are filtering waste from your blood.",
+      "clinical_significance": "eGFR is crucial for detecting and monitoring kidney function and diagnosing chronic kidney disease (CKD). Lower values indicate impaired kidney function.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2951-2",
+      "name": "Sodium",
+      "full_name": "Sodium",
+      "aliases": [
+        "Serum Sodium",
+        "Na"
+      ],
+      "category": "cmp",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mEq/L"
+      ],
+      "ref_range_general": "135-145 mEq/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 120,
+      "critical_high": 160,
+      "what_it_measures": "Sodium measures the amount of sodium in the blood, which is essential for maintaining fluid balance and proper nerve and muscle function.",
+      "clinical_significance": "Abnormal sodium levels can indicate issues such as dehydration, kidney disease, or adrenal gland disorders, which can have significant health implications.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2823-3",
+      "name": "Potassium",
+      "full_name": "Potassium",
+      "aliases": [
+        "Serum Potassium",
+        "K"
+      ],
+      "category": "electrolyte",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mEq/L"
+      ],
+      "ref_range_general": "3.5-5.1 mEq/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 2.5,
+      "critical_high": 6.5,
+      "what_it_measures": "Potassium measures the level of potassium in the blood, which is essential for proper cell function.",
+      "clinical_significance": "Potassium is crucial for nerve and muscle function, and abnormal levels can lead to serious health issues such as heart rhythm disturbances.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2075-0",
+      "name": "Chloride",
+      "full_name": "Chloride",
+      "aliases": [
+        "Serum Chloride",
+        "Cl"
+      ],
+      "category": "cmp",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mEq/L"
+      ],
+      "ref_range_general": "98-107 mEq/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 80,
+      "critical_high": 120,
+      "what_it_measures": "Chloride measures the level of chloride, an electrolyte, in the blood.",
+      "clinical_significance": "Chloride levels help assess the body's acid-base balance and hydration status, and can indicate issues such as dehydration, kidney disease, or metabolic imbalances.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1963-8",
+      "name": "Bicarbonate",
+      "full_name": "Bicarbonate (CO2)",
+      "aliases": [
+        "Bicarbonate (CO2)"
+      ],
+      "category": "metabolic",
+      "organ_system": "respiratory",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mEq/L"
+      ],
+      "ref_range_general": "22-29 mEq/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 15,
+      "critical_high": 40,
+      "what_it_measures": "Bicarbonate levels in the blood, which help maintain the body's acid-base balance.",
+      "clinical_significance": "Abnormal bicarbonate levels can indicate issues with acid-base balance, which may be due to respiratory or metabolic conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "17861-6",
+      "name": "Calcium",
+      "full_name": "Calcium",
+      "aliases": [
+        "Serum Calcium",
+        "Total Calcium",
+        "Ca"
+      ],
+      "category": "mineral",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "8.6-10.2 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 6.5,
+      "critical_high": 13.0,
+      "what_it_measures": "Calcium measures the amount of calcium in the blood, which is essential for bone health and various bodily functions.",
+      "clinical_significance": "Calcium levels are crucial for bone strength, nerve function, muscle contraction, and blood clotting. Abnormal levels can indicate bone disorders, kidney disease, or parathyroid gland issues.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2885-2",
+      "name": "Total Protein",
+      "full_name": "Total Protein",
+      "aliases": [
+        "Serum Total Protein",
+        "Protein Total"
+      ],
+      "category": "cmp",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "g/dL"
+      ],
+      "ref_range_general": "6.1-8.1 g/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 4.0,
+      "critical_high": 9.0,
+      "what_it_measures": "Total protein measures the combined amount of two classes of proteins, albumin and globulin, in the blood.",
+      "clinical_significance": "Total protein levels can indicate nutritional status, liver function, and kidney function. Abnormal levels may suggest liver disease, kidney disease, or other medical conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1751-7",
+      "name": "Albumin",
+      "full_name": "Albumin",
+      "aliases": [
+        "Serum Albumin"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "g/dL"
+      ],
+      "ref_range_general": "3.5-5.0 g/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 2.0,
+      "critical_high": null,
+      "what_it_measures": "Albumin measures the main protein made by the liver, which helps keep fluid in your bloodstream and carries hormones, vitamins, and enzymes.",
+      "clinical_significance": "Low albumin levels can indicate liver disease, kidney disease, or malnutrition, while high levels are less common and may indicate dehydration or high protein intake.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1975-2",
+      "name": "Total Bilirubin",
+      "full_name": "Total Bilirubin",
+      "aliases": [
+        "Bilirubin Total",
+        "T.Bil",
+        "TBIL"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "0.1-1.2 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 15.0,
+      "what_it_measures": "Total bilirubin measures the amount of bilirubin in the blood, which is a waste product from the breakdown of red blood cells.",
+      "clinical_significance": "Elevated levels of total bilirubin can indicate liver dysfunction, bile duct obstruction, or hemolytic anemia. It is important for diagnosing and monitoring liver diseases and conditions affecting red blood cell turnover.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1742-6",
+      "name": "ALT",
+      "full_name": "Alanine Aminotransferase",
+      "aliases": [
+        "SGPT",
+        "Alanine Aminotransferase",
+        "ALT (SGPT)"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "7-56 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 200,
+      "what_it_measures": "Alanine Aminotransferase (ALT) measures the level of an enzyme found primarily in the liver, which helps convert proteins into energy for liver cells.",
+      "clinical_significance": "Elevated ALT levels can indicate liver damage or inflammation, often due to conditions such as hepatitis, fatty liver disease, or liver cirrhosis. Monitoring ALT is crucial for assessing liver health.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1920-8",
+      "name": "AST",
+      "full_name": "Aspartate Aminotransferase",
+      "aliases": [
+        "SGOT",
+        "Aspartate Aminotransferase",
+        "AST (SGOT)"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "10-40 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 1000,
+      "what_it_measures": "Aspartate Aminotransferase (AST) measures the level of an enzyme found in the liver and heart that helps metabolize amino acids.",
+      "clinical_significance": "Elevated AST levels can indicate liver damage or disease, heart problems, or muscle injury. It is often used to assess liver health and diagnose liver conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "6768-6",
+      "name": "ALP",
+      "full_name": "Alkaline Phosphatase",
+      "aliases": [
+        "Alkaline Phosphatase",
+        "ALK PHOS"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "40-129 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Alkaline phosphatase measures the level of an enzyme related to the liver, bones, and other tissues.",
+      "clinical_significance": "Elevated levels can indicate liver disease, bone disorders, or bile duct obstructions, while low levels may suggest malnutrition or certain genetic disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2093-3",
+      "name": "Total Cholesterol",
+      "full_name": "Total Cholesterol",
+      "aliases": [
+        "Cholesterol",
+        "TC"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 200 mg/dL desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Total cholesterol measures the overall amount of cholesterol in your blood.",
+      "clinical_significance": "High levels of total cholesterol can increase the risk of cardiovascular diseases, such as heart attack and stroke.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "2571-8",
+      "name": "Triglycerides",
+      "full_name": "Triglycerides",
+      "aliases": [
+        "TG",
+        "TGL"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 150 mg/dL normal",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 500,
+      "what_it_measures": "Triglycerides measure the amount of fat in your blood.",
+      "clinical_significance": "High triglyceride levels can increase the risk of heart disease and may indicate metabolic syndrome or pancreatitis.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "2085-9",
+      "name": "HDL",
+      "full_name": "HDL Cholesterol",
+      "aliases": [
+        "HDL Cholesterol"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "≥ 40 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "HDL cholesterol measures the level of high-density lipoprotein in your blood, which is often referred to as 'good' cholesterol.",
+      "clinical_significance": "Higher levels of HDL cholesterol are associated with a lower risk of heart disease because HDL helps remove other forms of cholesterol from your bloodstream. Low levels of HDL cholesterol can increase the risk of cardiovascular disease.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "13457-7",
+      "name": "LDL",
+      "full_name": "LDL Cholesterol (Calculated)",
+      "aliases": [
+        "LDL Cholesterol (Calculated)"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 100 mg/dL optimal",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "LDL cholesterol measures the amount of low-density lipoprotein in your blood, often referred to as 'bad' cholesterol.",
+      "clinical_significance": "High levels of LDL cholesterol are associated with an increased risk of cardiovascular diseases, such as heart attack and stroke, because it can lead to the buildup of plaque in arteries.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "43396-1",
+      "name": "Non-HDL Cholesterol",
+      "full_name": "Non-HDL Cholesterol",
+      "aliases": [],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 130 mg/dL desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Non-HDL cholesterol measures the total cholesterol minus the HDL cholesterol, representing all the 'bad' cholesterol types.",
+      "clinical_significance": "Non-HDL cholesterol is important for assessing cardiovascular risk as it includes all atherogenic lipoproteins. Elevated levels are associated with an increased risk of heart disease.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "4548-4",
+      "name": "HbA1c",
+      "full_name": "Hemoglobin A1c",
+      "aliases": [
+        "Hemoglobin A1c",
+        "Glycated Hemoglobin",
+        "Glycosylated Hemoglobin",
+        "A1c"
+      ],
+      "category": "metabolic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "< 5.7% normal, 5.7-6.4% prediabetes, ≥ 6.5% diabetes",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Hemoglobin A1c measures the average blood sugar levels over the past 2 to 3 months.",
+      "clinical_significance": "It is used to diagnose and monitor diabetes, providing an indication of how well blood sugar levels are being managed over time.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2484-4",
+      "name": "Fasting Insulin",
+      "full_name": "Insulin (Fasting)",
+      "aliases": [
+        "Insulin (Fasting)"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "uU/mL"
+      ],
+      "ref_range_general": "2.6-24.9 uU/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Insulin (Fasting) measures the level of insulin in your blood after fasting, which helps regulate blood sugar levels.",
+      "clinical_significance": "Fasting insulin levels are important for diagnosing and managing conditions like diabetes and insulin resistance. Abnormal levels can indicate metabolic disorders.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "1558-6",
+      "name": "Fasting Glucose",
+      "full_name": "Glucose (Fasting, Plasma)",
+      "aliases": [
+        "Glucose (Fasting, Plasma)"
+      ],
+      "category": "metabolic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "70-99 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 40,
+      "critical_high": 400,
+      "what_it_measures": "The glucose level in your blood after fasting, which indicates how well your body manages sugar.",
+      "clinical_significance": "Fasting plasma glucose is crucial for diagnosing and monitoring diabetes and assessing the risk of developing diabetes-related complications.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "56926-0",
+      "name": "C-Peptide",
+      "full_name": "C-Peptide",
+      "aliases": [],
+      "category": "pancreatic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "0.8-3.1 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "C-Peptide measures the level of a peptide that is released when insulin is produced in the body.",
+      "clinical_significance": "C-Peptide levels help differentiate between type 1 and type 2 diabetes and can assess insulin production in the body. It is also used to evaluate residual beta-cell function in diabetic patients.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "3016-3",
+      "name": "TSH",
+      "full_name": "Thyroid Stimulating Hormone",
+      "aliases": [
+        "Thyroid Stimulating Hormone",
+        "Thyrotropin"
+      ],
+      "category": "thyroid",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mIU/L"
+      ],
+      "ref_range_general": "0.4-4.0 mIU/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 0.1,
+      "critical_high": 10.0,
+      "what_it_measures": "Thyroid Stimulating Hormone (TSH) measures how well the thyroid gland is functioning.",
+      "clinical_significance": "TSH levels help diagnose thyroid disorders such as hypothyroidism and hyperthyroidism, which can affect metabolism and overall health.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "3053-6",
+      "name": "Free T3",
+      "full_name": "Free Triiodothyronine",
+      "aliases": [
+        "Free Triiodothyronine"
+      ],
+      "category": "thyroid",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "2.0-4.4 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.0,
+      "critical_high": 10.0,
+      "what_it_measures": "Free Triiodothyronine (FT3) measures the amount of active thyroid hormone in the blood.",
+      "clinical_significance": "FT3 is important for evaluating thyroid function and diagnosing thyroid disorders such as hyperthyroidism or hypothyroidism.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "3026-2",
+      "name": "Free T4",
+      "full_name": "Free Thyroxine",
+      "aliases": [
+        "Free Thyroxine"
+      ],
+      "category": "thyroid",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/dL"
+      ],
+      "ref_range_general": "0.8-1.8 ng/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 0.4,
+      "critical_high": 2.5,
+      "what_it_measures": "Free Thyroxine measures the level of unbound thyroxine hormone in the blood.",
+      "clinical_significance": "It is important for assessing thyroid function and diagnosing thyroid disorders such as hypothyroidism and hyperthyroidism.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5385-0",
+      "name": "TPO Antibodies",
+      "full_name": "Thyroid Peroxidase Antibodies",
+      "aliases": [
+        "Thyroid Peroxidase Antibodies"
+      ],
+      "category": "autoimmune",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "IU/mL"
+      ],
+      "ref_range_general": "< 9 IU/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Thyroid peroxidase antibodies are proteins made by the immune system that can attack the thyroid gland.",
+      "clinical_significance": "Elevated levels of thyroid peroxidase antibodies can indicate autoimmune thyroid diseases such as Hashimoto's thyroiditis or Graves' disease.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "8098-6",
+      "name": "Thyroglobulin Ab",
+      "full_name": "Thyroglobulin Antibodies",
+      "aliases": [
+        "Thyroglobulin Antibodies"
+      ],
+      "category": "autoimmune",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "IU/mL"
+      ],
+      "ref_range_general": "< 4.0 IU/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Thyroglobulin antibodies are proteins made by the immune system that can attack the thyroid gland.",
+      "clinical_significance": "The presence of thyroglobulin antibodies can indicate autoimmune thyroid disorders such as Hashimoto's thyroiditis or Graves' disease. It is used to help diagnose and monitor these conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2498-4",
+      "name": "Iron",
+      "full_name": "Serum Iron",
+      "aliases": [
+        "Serum Iron",
+        "Fe"
+      ],
+      "category": "mineral",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "65-176 mcg/dL",
+      "ref_range_female": "50-170 mcg/dL",
+      "critical_low": 40,
+      "critical_high": 180,
+      "what_it_measures": "Serum iron measures the amount of iron in the liquid part of your blood.",
+      "clinical_significance": "Iron is essential for producing hemoglobin, which carries oxygen in the blood. Abnormal levels can indicate conditions like anemia or iron overload.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2276-4",
+      "name": "Ferritin",
+      "full_name": "Ferritin",
+      "aliases": [
+        "Serum Ferritin"
+      ],
+      "category": "inflammation",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "24-336 ng/mL",
+      "ref_range_female": "11-307 ng/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Ferritin measures the amount of stored iron in the body.",
+      "clinical_significance": "Ferritin levels help assess iron stores and can indicate conditions like iron deficiency anemia or iron overload disorders such as hemochromatosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2501-5",
+      "name": "TIBC",
+      "full_name": "Total Iron Binding Capacity",
+      "aliases": [
+        "Total Iron Binding Capacity"
+      ],
+      "category": "mineral",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "250-450 mcg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Total Iron Binding Capacity measures the blood's capacity to bind iron with transferrin.",
+      "clinical_significance": "This test helps evaluate iron metabolism and can aid in diagnosing conditions like iron deficiency anemia or iron overload disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14801-1",
+      "name": "Transferrin Saturation",
+      "full_name": "Transferrin Saturation",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "20-50%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": 55,
+      "what_it_measures": "Transferrin saturation measures the percentage of transferrin (a blood protein) that is bound with iron.",
+      "clinical_significance": "It is used to assess iron status and can help diagnose conditions like iron deficiency anemia or iron overload disorders such as hemochromatosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "30924-2",
+      "name": "Transferrin",
+      "full_name": "Transferrin",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "200-360 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Transferrin is a protein that binds and transports iron in the blood.",
+      "clinical_significance": "Transferrin levels can help assess iron metabolism and are used to evaluate conditions like iron deficiency anemia or iron overload disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1989-3",
+      "name": "Vitamin D",
+      "full_name": "25-Hydroxyvitamin D",
+      "aliases": [
+        "25-Hydroxyvitamin D",
+        "25-OH Vitamin D",
+        "25 Hydroxy Vitamin D",
+        "Vit D",
+        "Vitamin D Total",
+        "25(OH)D"
+      ],
+      "category": "vitamin",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "30-100 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": null,
+      "what_it_measures": "It measures the level of vitamin D in the blood, which is important for bone health.",
+      "clinical_significance": "Vitamin D is crucial for calcium absorption and bone health. Low levels can lead to bone disorders such as osteoporosis or rickets.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2132-9",
+      "name": "Vitamin B12",
+      "full_name": "Vitamin B12 (Cobalamin)",
+      "aliases": [
+        "Vitamin B12 (Cobalamin)",
+        "B12",
+        "Cobalamin",
+        "Cyanocobalamin"
+      ],
+      "category": "vitamin",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "200-900 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 150,
+      "critical_high": null,
+      "what_it_measures": "Vitamin B12 measures the level of cobalamin in the blood, which is essential for nerve function and the production of DNA and red blood cells.",
+      "clinical_significance": "Vitamin B12 is crucial for maintaining healthy nerve cells and producing DNA and red blood cells. Deficiency can lead to anemia and neurological issues.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2284-8",
+      "name": "Folate",
+      "full_name": "Folate (Serum)",
+      "aliases": [
+        "Folate (Serum)",
+        "Folic Acid",
+        "Vitamin B9",
+        "Serum Folate"
+      ],
+      "category": "vitamin",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "3.0-16.0 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 2.0,
+      "critical_high": null,
+      "what_it_measures": "Folate (serum) measures the level of folic acid in the blood, which is important for red blood cell formation and DNA synthesis.",
+      "clinical_significance": "Folate is crucial for preventing anemia and is particularly important during periods of rapid growth, such as pregnancy and infancy. Low levels can lead to folate deficiency anemia and may increase the risk of birth defects.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14635-3",
+      "name": "RBC Folate",
+      "full_name": "Folate (RBC)",
+      "aliases": [
+        "Folate (RBC)"
+      ],
+      "category": "vitamin",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "280-791 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 160,
+      "critical_high": null,
+      "what_it_measures": "Folate (RBC) measures the level of folate within red blood cells, which reflects long-term folate status in the body.",
+      "clinical_significance": "Folate is essential for DNA synthesis and repair, and its deficiency can lead to anemia and other health issues. Measuring RBC folate provides a more stable indicator of folate status compared to serum folate.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2069-3",
+      "name": "Vitamin A",
+      "full_name": "Retinol (Vitamin A)",
+      "aliases": [
+        "Retinol (Vitamin A)"
+      ],
+      "category": "vitamin",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "20-60 mcg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": 100,
+      "what_it_measures": "Retinol measures the level of Vitamin A in the blood, which is essential for vision, immune function, and skin health.",
+      "clinical_significance": "Vitamin A is crucial for maintaining healthy vision, immune function, and skin integrity. Deficiency can lead to vision problems and increased susceptibility to infections.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14905-0",
+      "name": "Vitamin E",
+      "full_name": "Alpha-Tocopherol (Vitamin E)",
+      "aliases": [
+        "Alpha-Tocopherol (Vitamin E)"
+      ],
+      "category": "vitamin",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/L"
+      ],
+      "ref_range_general": "5.5-17 mg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 2.5,
+      "critical_high": null,
+      "what_it_measures": "Alpha-Tocopherol measures the level of Vitamin E in the blood.",
+      "clinical_significance": "Vitamin E is an important antioxidant that helps protect cells from damage. Deficiency can lead to neurological problems, while excess can cause bleeding issues.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "28038-4",
+      "name": "Vitamin B6",
+      "full_name": "Pyridoxal 5-Phosphate (Vitamin B6)",
+      "aliases": [
+        "Pyridoxal 5-Phosphate (Vitamin B6)"
+      ],
+      "category": "vitamin",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "5.0-30.0 ng/mL",
+      "ref_range_male": "5.0-30.0 ng/mL",
+      "ref_range_female": "5.0-30.0 ng/mL",
+      "critical_low": 3,
+      "critical_high": null,
+      "what_it_measures": "Pyridoxal 5-Phosphate measures the active form of Vitamin B6 in the blood.",
+      "clinical_significance": "Vitamin B6 is essential for numerous enzymatic reactions in the body, including amino acid metabolism and neurotransmitter synthesis. Deficiency can lead to anemia, dermatitis, and neurological symptoms.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2502-3",
+      "name": "Vitamin B1",
+      "full_name": "Thiamine (Vitamin B1)",
+      "aliases": [
+        "Thiamine (Vitamin B1)"
+      ],
+      "category": "vitamin",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "nmol/L"
+      ],
+      "ref_range_general": "66-200 nmol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 28,
+      "critical_high": null,
+      "what_it_measures": "Thiamine (Vitamin B1) levels in the blood.",
+      "clinical_significance": "Thiamine is essential for energy metabolism and nerve function. Deficiency can lead to conditions such as beriberi and Wernicke-Korsakoff syndrome.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14627-0",
+      "name": "Vitamin C",
+      "full_name": "Ascorbic Acid (Vitamin C)",
+      "aliases": [
+        "Ascorbic Acid (Vitamin C)"
+      ],
+      "category": "vitamin",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "0.4-2.0 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 0.2,
+      "critical_high": null,
+      "what_it_measures": "Ascorbic acid (Vitamin C) levels in the blood.",
+      "clinical_significance": "Vitamin C is essential for the growth, development, and repair of all body tissues, and its deficiency can lead to scurvy and other health issues.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "19123-9",
+      "name": "Magnesium",
+      "full_name": "Magnesium",
+      "aliases": [
+        "Serum Magnesium",
+        "Mg"
+      ],
+      "category": "mineral",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "1.7-2.2 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.0,
+      "critical_high": 4.7,
+      "what_it_measures": "Magnesium measures the level of magnesium in the blood, which is important for muscle and nerve function.",
+      "clinical_significance": "Magnesium is crucial for many bodily functions, including muscle and nerve function, blood glucose control, and bone health. Abnormal levels can indicate various health issues such as kidney disease or malnutrition.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2777-1",
+      "name": "Phosphorus",
+      "full_name": "Phosphorus",
+      "aliases": [
+        "Serum Phosphorus",
+        "Phosphate",
+        "P"
+      ],
+      "category": "mineral",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "2.5-4.5 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.0,
+      "critical_high": 9.0,
+      "what_it_measures": "Phosphorus levels in the blood, which are important for bone health and energy production.",
+      "clinical_significance": "Phosphorus is essential for bone formation, energy storage, and filtering waste in the kidneys. Abnormal levels can indicate kidney disease, bone disorders, or imbalances in calcium or vitamin D.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2532-0",
+      "name": "Zinc",
+      "full_name": "Zinc",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "70-120 mcg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 50,
+      "critical_high": 150,
+      "what_it_measures": "Zinc is a mineral that is important for immune function, wound healing, and DNA synthesis.",
+      "clinical_significance": "Zinc levels are important to assess because both deficiency and excess can lead to significant health issues, including immune dysfunction and impaired growth.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5637-4",
+      "name": "Copper",
+      "full_name": "Copper",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "70-155 mcg/dL",
+      "ref_range_male": "70-140 mcg/dL",
+      "ref_range_female": "80-155 mcg/dL",
+      "critical_low": 50,
+      "critical_high": 200,
+      "what_it_measures": "Copper levels in the blood, which are important for various bodily functions including iron metabolism and nervous system health.",
+      "clinical_significance": "Copper is essential for the function of several enzymes and is important for the formation of red blood cells and maintaining healthy bones, blood vessels, nerves, and immune function. Abnormal levels can indicate nutritional deficiencies, Wilson's disease, or other metabolic disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5671-3",
+      "name": "Selenium",
+      "full_name": "Selenium",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/L"
+      ],
+      "ref_range_general": "70-150 mcg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 45,
+      "critical_high": 200,
+      "what_it_measures": "Selenium measures the level of selenium, an essential trace mineral, in the blood.",
+      "clinical_significance": "Selenium is important for various bodily functions, including antioxidant defense and thyroid hormone metabolism. Abnormal levels can indicate nutritional deficiencies or toxicities.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14944-9",
+      "name": "Chromium",
+      "full_name": "Chromium",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/L"
+      ],
+      "ref_range_general": "0.1-0.2 mcg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Chromium levels in the blood, which is important for metabolism and insulin function.",
+      "clinical_significance": "Chromium is essential for the metabolism of carbohydrates, fats, and proteins, and it enhances the action of insulin. Abnormal levels may indicate metabolic disorders or exposure to chromium.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5668-9",
+      "name": "Iodine (Urine)",
+      "full_name": "Iodine (Urine)",
+      "aliases": [],
+      "category": "mineral",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mcg/L"
+      ],
+      "ref_range_general": "100-199 mcg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 20,
+      "critical_high": null,
+      "what_it_measures": "Iodine levels in the urine, which reflect dietary iodine intake.",
+      "clinical_significance": "Iodine is essential for thyroid hormone production, and its deficiency or excess can lead to thyroid dysfunction. Monitoring urinary iodine helps assess iodine nutritional status.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1988-5",
+      "name": "CRP",
+      "full_name": "C-Reactive Protein",
+      "aliases": [
+        "C-Reactive Protein",
+        "C Reactive Protein"
+      ],
+      "category": "inflammation",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/L"
+      ],
+      "ref_range_general": "< 3.0 mg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "C-Reactive Protein measures the level of inflammation in the body.",
+      "clinical_significance": "Elevated CRP levels can indicate acute inflammation, infection, or chronic inflammatory diseases, and are used to assess the risk of cardiovascular diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "30522-7",
+      "name": "hs-CRP",
+      "full_name": "High-Sensitivity C-Reactive Protein",
+      "aliases": [
+        "High-Sensitivity C-Reactive Protein",
+        "High Sensitivity CRP",
+        "Hs-CRP"
+      ],
+      "category": "inflammation",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/L"
+      ],
+      "ref_range_general": "< 1.0 mg/L low risk, 1.0-3.0 mg/L average risk, > 3.0 mg/L high risk",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "High-Sensitivity C-Reactive Protein measures the level of CRP, a protein that increases in the blood with inflammation.",
+      "clinical_significance": "This test is used to assess the risk of cardiovascular disease and to detect inflammation in the body, which can indicate various conditions such as infections or chronic diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "4537-7",
+      "name": "ESR",
+      "full_name": "Erythrocyte Sedimentation Rate",
+      "aliases": [
+        "Erythrocyte Sedimentation Rate",
+        "Sedimentation Rate"
+      ],
+      "category": "inflammation",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mm/hr"
+      ],
+      "ref_range_general": "0-20 mm/hr",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The erythrocyte sedimentation rate (ESR) measures how quickly red blood cells settle at the bottom of a test tube, which can indicate inflammation in the body.",
+      "clinical_significance": "An elevated ESR can indicate inflammation due to various conditions such as infections, autoimmune diseases, and cancers. It is a non-specific test and often used in conjunction with other tests to diagnose or monitor inflammatory conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "3255-7",
+      "name": "Fibrinogen",
+      "full_name": "Fibrinogen",
+      "aliases": [],
+      "category": "coagulation",
+      "organ_system": "hematologic",
+      "tier": 2,
+      "specialist": "hematologist",
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "200-400 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 100,
+      "critical_high": 700,
+      "what_it_measures": "Fibrinogen is a protein in the blood that helps with clot formation.",
+      "clinical_significance": "Fibrinogen levels are important for assessing bleeding disorders and the risk of thrombosis. Abnormal levels can indicate liver disease, inflammation, or other medical conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "26881-3",
+      "name": "IL-6",
+      "full_name": "Interleukin-6",
+      "aliases": [
+        "Interleukin-6"
+      ],
+      "category": "inflammation",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "< 7 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Interleukin-6 is a protein that indicates inflammation in the body.",
+      "clinical_significance": "Elevated levels of Interleukin-6 can indicate acute or chronic inflammation and are associated with conditions such as infections, autoimmune disorders, and chronic inflammatory diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2857-1",
+      "name": "PSA",
+      "full_name": "Prostate-Specific Antigen",
+      "aliases": [
+        "Prostate-Specific Antigen"
+      ],
+      "category": "cancer_marker",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "oncologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "not applicable",
+      "ref_range_male": "0-4.0 ng/mL",
+      "ref_range_female": "not applicable",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Prostate-Specific Antigen (PSA) measures the level of PSA in the blood, which is a protein produced by the prostate gland.",
+      "clinical_significance": "Elevated PSA levels can indicate prostate cancer, benign prostatic hyperplasia, or prostatitis, making it a useful marker for prostate health assessment.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2324-2",
+      "name": "GGT",
+      "full_name": "Gamma-Glutamyl Transferase",
+      "aliases": [
+        "Gamma GT",
+        "Gamma-Glutamyl Transferase"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "7-47 U/L",
+      "ref_range_female": "5-40 U/L",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Gamma-Glutamyl Transferase (GGT) measures the level of an enzyme in the blood that is involved in liver function.",
+      "clinical_significance": "Elevated GGT levels can indicate liver disease, bile duct problems, or alcohol abuse. It is often used to help diagnose liver conditions and monitor treatment progress.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1968-7",
+      "name": "Direct Bilirubin",
+      "full_name": "Direct Bilirubin",
+      "aliases": [
+        "Bilirubin Direct",
+        "D.Bil",
+        "Conjugated Bilirubin"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "0.0-0.3 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 1.5,
+      "what_it_measures": "Direct bilirubin measures the level of bilirubin that is conjugated with glucuronic acid in the liver, making it water-soluble.",
+      "clinical_significance": "Elevated direct bilirubin levels can indicate liver dysfunction or bile duct obstruction, as it reflects the liver's ability to process and excrete bilirubin. It is important for diagnosing and monitoring liver diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "10834-0",
+      "name": "Globulin",
+      "full_name": "Globulin (Calculated)",
+      "aliases": [
+        "Globulin (Calculated)"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "g/dL"
+      ],
+      "ref_range_general": "2.0-3.5 g/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Globulin levels in the blood, which are proteins that play roles in liver function, blood clotting, and fighting infections.",
+      "clinical_significance": "Abnormal globulin levels can indicate liver disease, kidney disease, or immune disorders. It is often used to assess liver function and overall protein status in the body.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1759-0",
+      "name": "A/G Ratio",
+      "full_name": "Albumin/Globulin Ratio",
+      "aliases": [
+        "Albumin/Globulin Ratio"
+      ],
+      "category": "hepatic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ratio"
+      ],
+      "ref_range_general": "1.0-2.5",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The albumin/globulin ratio measures the relative amounts of albumin and globulin proteins in the blood.",
+      "clinical_significance": "An abnormal albumin/globulin ratio can indicate liver disease, kidney disease, or other conditions affecting protein levels in the blood.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "3084-1",
+      "name": "Uric Acid",
+      "full_name": "Uric Acid",
+      "aliases": [
+        "Serum Uric Acid",
+        "URIC"
+      ],
+      "category": "metabolic",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "3.4-7.0 mg/dL",
+      "ref_range_female": "2.4-6.0 mg/dL",
+      "critical_low": null,
+      "critical_high": 12.0,
+      "what_it_measures": "Uric acid measures the level of uric acid in the blood, which is a waste product formed from the breakdown of purines.",
+      "clinical_significance": "Elevated uric acid levels can indicate gout, kidney stones, or renal dysfunction, while low levels may suggest liver or kidney disease. Monitoring uric acid is important for diagnosing and managing these conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "82570-2",
+      "name": "Cystatin C",
+      "full_name": "Cystatin C",
+      "aliases": [],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/L"
+      ],
+      "ref_range_general": "0.6-1.2 mg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Cystatin C is a protein that helps assess kidney function.",
+      "clinical_significance": "Cystatin C levels are used to evaluate kidney function and can be a more sensitive marker than creatinine, especially in early kidney disease.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "14957-5",
+      "name": "Microalbumin (Urine)",
+      "full_name": "Microalbumin (Urine)",
+      "aliases": [],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/L"
+      ],
+      "ref_range_general": "<30 mg/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Microalbumin measures the amount of albumin, a type of protein, in the urine.",
+      "clinical_significance": "Elevated levels of microalbumin in urine can be an early sign of kidney damage, particularly in individuals with diabetes or hypertension.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "9318-7",
+      "name": "Albumin/Creatinine Ratio",
+      "full_name": "Albumin/Creatinine Ratio (Urine)",
+      "aliases": [
+        "Albumin/Creatinine Ratio (Urine)"
+      ],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/g"
+      ],
+      "ref_range_general": "<30 mg/g",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The albumin/creatinine ratio in urine measures the amount of albumin relative to creatinine, indicating kidney function.",
+      "clinical_significance": "This test is important for detecting early signs of kidney damage, especially in individuals with diabetes or hypertension, as elevated levels can indicate kidney disease.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2161-8",
+      "name": "BUN/Creatinine Ratio",
+      "full_name": "BUN/Creatinine Ratio",
+      "aliases": [],
+      "category": "renal",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ratio"
+      ],
+      "ref_range_general": "10-20",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The BUN/Creatinine Ratio measures the balance between blood urea nitrogen and creatinine levels in the blood.",
+      "clinical_significance": "This ratio helps in assessing kidney function and can indicate conditions such as dehydration, kidney disease, or urinary tract obstruction.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "49563-0",
+      "name": "Troponin I",
+      "full_name": "Troponin I (High Sensitivity)",
+      "aliases": [
+        "Troponin I (High Sensitivity)"
+      ],
+      "category": "cardiac",
+      "organ_system": "cardiovascular",
+      "tier": 2,
+      "specialist": "cardiologist",
+      "common_units": [
+        "ng/L"
+      ],
+      "ref_range_general": "< 19 ng/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 100,
+      "what_it_measures": "Troponin I measures the level of a protein released into the blood when the heart muscle is damaged.",
+      "clinical_significance": "High levels of troponin I are indicative of heart muscle injury, such as that occurring during a heart attack, making it a critical marker for diagnosing acute coronary syndromes.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "30934-4",
+      "name": "BNP",
+      "full_name": "B-Type Natriuretic Peptide",
+      "aliases": [
+        "B-Type Natriuretic Peptide"
+      ],
+      "category": "cardiac",
+      "organ_system": "cardiovascular",
+      "tier": 2,
+      "specialist": "cardiologist",
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "< 100 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 400,
+      "what_it_measures": "B-Type Natriuretic Peptide (BNP) measures the level of a hormone produced by your heart.",
+      "clinical_significance": "BNP levels are used to help diagnose and assess the severity of heart failure. Elevated levels can indicate heart stress or damage.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "33762-6",
+      "name": "NT-proBNP",
+      "full_name": "N-Terminal Pro-BNP",
+      "aliases": [
+        "N-Terminal Pro-BNP"
+      ],
+      "category": "cardiac",
+      "organ_system": "cardiovascular",
+      "tier": 2,
+      "specialist": "cardiologist",
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "< 125 pg/mL for individuals aged 0-74 years, < 450 pg/mL for individuals aged 75-99 years",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "N-Terminal Pro-BNP measures the level of a hormone produced by your heart.",
+      "clinical_significance": "Elevated levels of NT-proBNP can indicate heart failure or other cardiac conditions, helping in the diagnosis and management of these diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2090-9",
+      "name": "Cholesterol/HDL Ratio",
+      "full_name": "Total Cholesterol/HDL Ratio",
+      "aliases": [
+        "Total Cholesterol/HDL Ratio"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ratio"
+      ],
+      "ref_range_general": "< 5.0 desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The Total Cholesterol/HDL Ratio measures the balance between total cholesterol and high-density lipoprotein cholesterol in the blood.",
+      "clinical_significance": "This ratio is used to assess cardiovascular risk, with higher ratios indicating a greater risk of heart disease.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "43394-6",
+      "name": "ApoB",
+      "full_name": "Apolipoprotein B",
+      "aliases": [
+        "Apolipoprotein B"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 90 mg/dL desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Apolipoprotein B measures the amount of a protein that is a component of LDL cholesterol, which is often referred to as 'bad' cholesterol.",
+      "clinical_significance": "Elevated levels of Apolipoprotein B are associated with an increased risk of cardiovascular disease as it reflects the number of potentially atherogenic lipoprotein particles.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "10835-7",
+      "name": "Lp(a)",
+      "full_name": "Lipoprotein(a)",
+      "aliases": [
+        "Lipoprotein(a)"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "nmol/L"
+      ],
+      "ref_range_general": "< 75 nmol/L desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Lipoprotein(a) is a type of lipoprotein in the blood that carries cholesterol and proteins.",
+      "clinical_significance": "Elevated levels of Lipoprotein(a) are associated with an increased risk of cardiovascular diseases, such as coronary artery disease and stroke.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "13966-7",
+      "name": "LDL Particle Number",
+      "full_name": "LDL Particle Number (NMR)",
+      "aliases": [
+        "LDL Particle Number (NMR)"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "nmol/L"
+      ],
+      "ref_range_general": "< 1000 nmol/L desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "LDL Particle Number measures the number of low-density lipoprotein particles in the blood.",
+      "clinical_significance": "High levels of LDL particles are associated with an increased risk of cardiovascular disease, as they can contribute to plaque buildup in arteries.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "2986-8",
+      "name": "Testosterone (Total)",
+      "full_name": "Testosterone (Total)",
+      "aliases": [],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "ng/dL"
+      ],
+      "ref_range_general": "not applicable",
+      "ref_range_male": "300-1000 ng/dL",
+      "ref_range_female": "15-70 ng/dL",
+      "critical_low": 150,
+      "critical_high": 1500,
+      "what_it_measures": "Testosterone (Total) measures the total amount of testosterone hormone in the blood.",
+      "clinical_significance": "Testosterone is crucial for the development of male reproductive tissues and secondary sexual characteristics; abnormal levels can indicate hormonal imbalances or endocrine disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2991-8",
+      "name": "Testosterone (Free)",
+      "full_name": "Testosterone (Free)",
+      "aliases": [],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "35-155 pg/mL",
+      "ref_range_female": "1.0-8.5 pg/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Free testosterone measures the amount of testosterone not bound to proteins in the blood.",
+      "clinical_significance": "Free testosterone levels are important for evaluating hormonal balance, sexual function, and reproductive health. Abnormal levels can indicate conditions such as hypogonadism, polycystic ovary syndrome, or adrenal disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2243-4",
+      "name": "Estradiol",
+      "full_name": "Estradiol (E2)",
+      "aliases": [
+        "Estradiol (E2)"
+      ],
+      "category": "hormone",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "10-40 pg/mL",
+      "ref_range_female": "30-400 pg/mL (varies with menstrual cycle phase)",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Estradiol is a form of estrogen, a hormone that plays a key role in the development and regulation of the female reproductive system and secondary sexual characteristics.",
+      "clinical_significance": "Estradiol levels are important for assessing ovarian function, fertility, and menstrual irregularities in women, and can also be used to evaluate estrogen-producing tumors. In men, abnormal levels may indicate hormonal imbalances.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2191-5",
+      "name": "Progesterone",
+      "full_name": "Progesterone",
+      "aliases": [],
+      "category": "hormone",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": null,
+      "ref_range_male": "same as general",
+      "ref_range_female": "Follicular phase: 0.1-0.9 ng/mL, Luteal phase: 1.8-23.9 ng/mL, Postmenopausal: <0.1-0.8 ng/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Progesterone is a hormone that plays a role in the menstrual cycle and pregnancy.",
+      "clinical_significance": "Progesterone levels are important for assessing reproductive health, diagnosing menstrual disorders, and monitoring pregnancy. Abnormal levels can indicate issues such as ovarian dysfunction or ectopic pregnancy.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2839-9",
+      "name": "DHEA-S",
+      "full_name": "Dehydroepiandrosterone Sulfate",
+      "aliases": [
+        "Dehydroepiandrosterone Sulfate"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "85-690 mcg/dL",
+      "ref_range_female": "12-535 mcg/dL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Dehydroepiandrosterone sulfate (DHEA-S) is a hormone produced by the adrenal glands.",
+      "clinical_significance": "DHEA-S levels can help evaluate adrenal gland function and diagnose conditions related to hormone imbalances, such as adrenal tumors or adrenal insufficiency.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2143-6",
+      "name": "Cortisol (AM)",
+      "full_name": "Cortisol (Morning)",
+      "aliases": [
+        "Cortisol (Morning)"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "mcg/dL"
+      ],
+      "ref_range_general": "5-25 mcg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 3,
+      "critical_high": 30,
+      "what_it_measures": "Cortisol is a hormone produced by the adrenal glands that helps regulate metabolism, immune response, and stress.",
+      "clinical_significance": "Morning cortisol levels are important for diagnosing adrenal gland disorders such as Addison's disease or Cushing's syndrome. Abnormal levels can indicate issues with stress response or adrenal function.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2842-3",
+      "name": "SHBG",
+      "full_name": "Sex Hormone Binding Globulin",
+      "aliases": [
+        "Sex Hormone Binding Globulin"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "nmol/L"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "10-57 nmol/L",
+      "ref_range_female": "18-144 nmol/L",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Sex Hormone Binding Globulin (SHBG) measures the level of a protein that binds to sex hormones in the blood.",
+      "clinical_significance": "SHBG levels can affect the availability of sex hormones like testosterone and estrogen, influencing conditions such as hormonal imbalances, infertility, and certain endocrine disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "15067-2",
+      "name": "FSH",
+      "full_name": "Follicle Stimulating Hormone",
+      "aliases": [
+        "Follicle Stimulating Hormone"
+      ],
+      "category": "hormone",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "mIU/mL"
+      ],
+      "ref_range_general": "N/A",
+      "ref_range_male": "1.5-12.4 mIU/mL",
+      "ref_range_female": "Follicular phase: 3.5-12.5 mIU/mL, Ovulation peak: 4.7-21.5 mIU/mL, Luteal phase: 1.7-7.7 mIU/mL, Postmenopausal: 25.8-134.8 mIU/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Follicle Stimulating Hormone (FSH) measures the level of a hormone involved in reproductive processes.",
+      "clinical_significance": "FSH is important for the development of eggs in ovaries and sperm in testes, and its levels can indicate reproductive health or dysfunction.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "10501-5",
+      "name": "LH",
+      "full_name": "Luteinizing Hormone",
+      "aliases": [
+        "Luteinizing Hormone"
+      ],
+      "category": "hormone",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "mIU/mL"
+      ],
+      "ref_range_general": "N/A",
+      "ref_range_male": "1.24-7.8 mIU/mL",
+      "ref_range_female": "Follicular phase: 1.68-15.0 mIU/mL, Mid-cycle peak: 21.9-56.6 mIU/mL, Luteal phase: 0.61-16.3 mIU/mL, Postmenopausal: 14.2-52.3 mIU/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Luteinizing Hormone (LH) measures the level of a hormone that plays a key role in regulating the reproductive system.",
+      "clinical_significance": "LH is crucial for normal reproductive function, including ovulation in females and testosterone production in males. Abnormal levels can indicate reproductive disorders or pituitary gland issues.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2963-7",
+      "name": "IGF-1",
+      "full_name": "Insulin-Like Growth Factor 1",
+      "aliases": [
+        "Insulin-Like Growth Factor 1"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "116-358 ng/mL (age-dependent)",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Insulin-Like Growth Factor 1 (IGF-1) measures the level of a hormone that is important for growth and development.",
+      "clinical_significance": "IGF-1 levels can help assess growth disorders, pituitary function, and nutritional status. Abnormal levels may indicate growth hormone deficiencies or excesses.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5902-2",
+      "name": "PT",
+      "full_name": "Prothrombin Time",
+      "aliases": [
+        "Prothrombin Time"
+      ],
+      "category": "coagulation",
+      "organ_system": "hematologic",
+      "tier": 2,
+      "specialist": "hematologist",
+      "common_units": [
+        "seconds"
+      ],
+      "ref_range_general": "10-13 seconds",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 20,
+      "what_it_measures": "Prothrombin Time measures how long it takes for blood to clot.",
+      "clinical_significance": "It is used to evaluate the blood's ability to clot properly and can help diagnose bleeding disorders or monitor patients on anticoagulant therapy.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "6301-6",
+      "name": "INR",
+      "full_name": "International Normalized Ratio",
+      "aliases": [
+        "International Normalized Ratio"
+      ],
+      "category": "coagulation",
+      "organ_system": "hematologic",
+      "tier": 2,
+      "specialist": "hematologist",
+      "common_units": [
+        "ratio"
+      ],
+      "ref_range_general": "0.8-1.2 for individuals not on anticoagulation therapy",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.5,
+      "critical_high": 4.0,
+      "what_it_measures": "The International Normalized Ratio (INR) measures how long it takes for blood to clot and is used to monitor patients on anticoagulant therapy.",
+      "clinical_significance": "INR is crucial for ensuring that patients on blood thinners like warfarin are within a safe therapeutic range to prevent either excessive bleeding or clotting.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "3173-2",
+      "name": "PTT",
+      "full_name": "Partial Thromboplastin Time",
+      "aliases": [
+        "Partial Thromboplastin Time"
+      ],
+      "category": "coagulation",
+      "organ_system": "hematologic",
+      "tier": 2,
+      "specialist": "hematologist",
+      "common_units": [
+        "seconds"
+      ],
+      "ref_range_general": "25-35 seconds",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 100,
+      "what_it_measures": "Partial Thromboplastin Time measures how long it takes for blood to clot.",
+      "clinical_significance": "It is used to evaluate the intrinsic and common coagulation pathways and can help diagnose bleeding disorders or monitor anticoagulation therapy.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "48065-7",
+      "name": "D-Dimer",
+      "full_name": "D-Dimer",
+      "aliases": [],
+      "category": "coagulation",
+      "organ_system": "hematologic",
+      "tier": 2,
+      "specialist": "hematologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "< 500 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "D-Dimer measures the presence of fibrin degradation products in the blood.",
+      "clinical_significance": "Elevated D-Dimer levels can indicate the presence of abnormal blood clotting and are used to help diagnose conditions like deep vein thrombosis or pulmonary embolism.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2518-9",
+      "name": "Homocysteine",
+      "full_name": "Homocysteine",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "umol/L"
+      ],
+      "ref_range_general": "5-15 umol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Homocysteine is an amino acid in the blood that can indicate cardiovascular health.",
+      "clinical_significance": "Elevated homocysteine levels are associated with an increased risk of cardiovascular diseases and can indicate deficiencies in vitamins B6, B12, or folate.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "14804-9",
+      "name": "Lactate",
+      "full_name": "Lactate",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mmol/L"
+      ],
+      "ref_range_general": "0.5-2.2 mmol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 4.0,
+      "what_it_measures": "Lactate measures the level of lactic acid in the blood, which can indicate how well oxygen is being delivered to tissues.",
+      "clinical_significance": "Elevated lactate levels can indicate tissue hypoxia, sepsis, or metabolic disorders, and are critical in assessing the severity of conditions like shock or sepsis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2668-2",
+      "name": "Ammonia",
+      "full_name": "Ammonia",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "umol/L"
+      ],
+      "ref_range_general": "11-35 umol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 100,
+      "what_it_measures": "Ammonia levels in the blood, which can indicate liver function and metabolic health.",
+      "clinical_significance": "Elevated ammonia levels can indicate liver dysfunction, such as cirrhosis or hepatitis, and can lead to neurological symptoms if untreated.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2965-2",
+      "name": "Specific Gravity (Urine)",
+      "full_name": "Urine Specific Gravity",
+      "aliases": [
+        "Urine Specific Gravity"
+      ],
+      "category": "urinalysis",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ratio"
+      ],
+      "ref_range_general": "1.005-1.030",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 1.001,
+      "critical_high": 1.035,
+      "what_it_measures": "Urine specific gravity measures the concentration of solutes in the urine.",
+      "clinical_significance": "It helps assess the kidney's ability to concentrate urine and can indicate hydration status or potential kidney dysfunction.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2756-5",
+      "name": "pH (Urine)",
+      "full_name": "Urine pH",
+      "aliases": [
+        "Urine pH"
+      ],
+      "category": "urinalysis",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pH"
+      ],
+      "ref_range_general": "4.5-8.0",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Urine pH measures the acidity or alkalinity of urine.",
+      "clinical_significance": "Urine pH can indicate kidney function and help diagnose urinary tract infections or kidney stones. It can also reflect metabolic or respiratory conditions affecting acid-base balance.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5811-5",
+      "name": "Glucose (Urine)",
+      "full_name": "Urine Glucose",
+      "aliases": [
+        "Urine Glucose"
+      ],
+      "category": "urinalysis",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 15 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Urine glucose measures the amount of glucose present in the urine.",
+      "clinical_significance": "The presence of glucose in urine can indicate uncontrolled diabetes or other conditions affecting glucose metabolism.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5804-0",
+      "name": "Protein (Urine)",
+      "full_name": "Urine Protein",
+      "aliases": [
+        "Urine Protein"
+      ],
+      "category": "urinalysis",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 15 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Urine protein measures the amount of protein present in the urine.",
+      "clinical_significance": "Elevated levels of protein in the urine can indicate kidney damage or disease, as the kidneys normally prevent significant amounts of protein from being excreted in urine.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "20454-5",
+      "name": "Ketones (Urine)",
+      "full_name": "Urine Ketones",
+      "aliases": [
+        "Urine Ketones"
+      ],
+      "category": "urinalysis",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "negative",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Urine ketones measure the presence of ketone bodies in the urine.",
+      "clinical_significance": "The presence of ketones in urine can indicate that the body is using fat as a primary energy source, which can occur in conditions like diabetes, starvation, or low-carbohydrate diets.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "11555-0",
+      "name": "Anion Gap",
+      "full_name": "Anion Gap",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mEq/L"
+      ],
+      "ref_range_general": "7-16 mEq/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "The anion gap measures the difference between positively charged ions and negatively charged ions in the blood.",
+      "clinical_significance": "An abnormal anion gap can indicate an imbalance in electrolytes, which may be due to conditions such as kidney disease, diabetic ketoacidosis, or poisoning.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2019-8",
+      "name": "Osmolality (Serum)",
+      "full_name": "Serum Osmolality",
+      "aliases": [
+        "Serum Osmolality"
+      ],
+      "category": "metabolic",
+      "organ_system": "renal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mOsm/kg"
+      ],
+      "ref_range_general": "275-295 mOsm/kg",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 240,
+      "critical_high": 320,
+      "what_it_measures": "Serum osmolality measures the concentration of solutes in the blood.",
+      "clinical_significance": "It is important for assessing the body's water balance and can indicate conditions such as dehydration, overhydration, or electrolyte imbalances.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "19113-0",
+      "name": "Total IgE",
+      "full_name": "Immunoglobulin E (Total)",
+      "aliases": [
+        "Immunoglobulin E (Total)"
+      ],
+      "category": "immune",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "IU/mL"
+      ],
+      "ref_range_general": "0-100 IU/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Immunoglobulin E (IgE) measures the level of IgE antibodies in the blood.",
+      "clinical_significance": "Elevated levels of IgE can indicate allergic reactions, asthma, or parasitic infections. It is used to assess allergic conditions and monitor treatment efficacy.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2465-3",
+      "name": "IgA",
+      "full_name": "Immunoglobulin A",
+      "aliases": [
+        "Immunoglobulin A"
+      ],
+      "category": "immune",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "70-400 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Immunoglobulin A (IgA) measures the level of IgA antibodies in the blood, which are important for immune function.",
+      "clinical_significance": "IgA levels can help diagnose immune system disorders, infections, and certain autoimmune diseases. Abnormal levels may indicate an underlying health issue.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2466-1",
+      "name": "IgG",
+      "full_name": "Immunoglobulin G",
+      "aliases": [
+        "Immunoglobulin G"
+      ],
+      "category": "immune",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "700-1600 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 400,
+      "critical_high": null,
+      "what_it_measures": "Immunoglobulin G (IgG) measures the level of IgG antibodies in the blood, which are crucial for immune response.",
+      "clinical_significance": "IgG is the most abundant type of antibody, playing a key role in the body's defense against infections. Abnormal levels can indicate immune deficiencies or autoimmune disorders.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2472-9",
+      "name": "IgM",
+      "full_name": "Immunoglobulin M",
+      "aliases": [
+        "Immunoglobulin M"
+      ],
+      "category": "immune",
+      "organ_system": "immune",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "40-230 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Immunoglobulin M (IgM) measures the level of IgM antibodies in the blood, which are important for the body's initial immune response.",
+      "clinical_significance": "IgM levels can help diagnose and monitor infections, immune disorders, and certain types of cancer. Abnormal levels may indicate an acute infection or an immune system disorder.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "8061-4",
+      "name": "ANA",
+      "full_name": "Antinuclear Antibodies",
+      "aliases": [
+        "Antinuclear Antibodies"
+      ],
+      "category": "autoimmune",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "titer"
+      ],
+      "ref_range_general": "<1:40 titer is considered negative>",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Antinuclear antibodies (ANA) are proteins made by the immune system that can attack the body's own cells.",
+      "clinical_significance": "The presence of ANAs can indicate autoimmune disorders such as lupus, rheumatoid arthritis, or Sjögren's syndrome. It helps in diagnosing and monitoring these conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "11039-5",
+      "name": "Rheumatoid Factor",
+      "full_name": "Rheumatoid Factor",
+      "aliases": [],
+      "category": "autoimmune",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "IU/mL"
+      ],
+      "ref_range_general": "< 14 IU/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Rheumatoid Factor measures the presence of an antibody that can indicate autoimmune activity, particularly in rheumatoid arthritis.",
+      "clinical_significance": "Elevated levels of Rheumatoid Factor can suggest the presence of autoimmune diseases such as rheumatoid arthritis or Sjögren's syndrome, aiding in diagnosis and management.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "53027-9",
+      "name": "Anti-CCP",
+      "full_name": "Anti-Cyclic Citrullinated Peptide",
+      "aliases": [
+        "Anti-Cyclic Citrullinated Peptide"
+      ],
+      "category": "autoimmune",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "U/mL"
+      ],
+      "ref_range_general": "< 20 U/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test measures the presence of antibodies against cyclic citrullinated peptides in the blood.",
+      "clinical_significance": "The presence of these antibodies is associated with rheumatoid arthritis and can help in its diagnosis and prognosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "58473-0",
+      "name": "tTG-IgA",
+      "full_name": "Tissue Transglutaminase IgA (Celiac)",
+      "aliases": [
+        "Tissue Transglutaminase IgA (Celiac)"
+      ],
+      "category": "autoimmune",
+      "organ_system": "gastrointestinal",
+      "tier": 2,
+      "specialist": "rheumatologist",
+      "common_units": [
+        "U/mL"
+      ],
+      "ref_range_general": "< 4 U/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test measures the level of IgA antibodies against tissue transglutaminase in the blood.",
+      "clinical_significance": "Elevated levels of tissue transglutaminase IgA antibodies are associated with celiac disease, an autoimmune disorder where ingestion of gluten leads to damage in the small intestine.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "53964-3",
+      "name": "HOMA-IR",
+      "full_name": "Homeostasis Model Assessment - Insulin Resistance",
+      "aliases": [
+        "Homeostasis Model Assessment - Insulin Resistance"
+      ],
+      "category": "metabolic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "index"
+      ],
+      "ref_range_general": "< 1.0 index",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "It measures insulin resistance, which is how effectively the body uses insulin to lower blood sugar.",
+      "clinical_significance": "Insulin resistance is a key feature of type 2 diabetes and metabolic syndrome, and assessing it can help in diagnosing and managing these conditions.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "44877-9",
+      "name": "Fructosamine",
+      "full_name": "Fructosamine",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "umol/L"
+      ],
+      "ref_range_general": "205-285 umol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Fructosamine measures the average level of blood glucose over the past 2-3 weeks.",
+      "clinical_significance": "It is used to monitor blood glucose control in individuals with diabetes, providing a shorter-term view compared to hemoglobin A1c.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "10153-2",
+      "name": "CA-125",
+      "full_name": "Cancer Antigen 125",
+      "aliases": [
+        "Cancer Antigen 125"
+      ],
+      "category": "cancer_marker",
+      "organ_system": "reproductive",
+      "tier": 2,
+      "specialist": "oncologist",
+      "common_units": [
+        "U/mL"
+      ],
+      "ref_range_general": "< 35 U/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Cancer Antigen 125 (CA-125) is a protein that is often elevated in the blood of women with ovarian cancer.",
+      "clinical_significance": "CA-125 is used primarily to monitor treatment response and detect recurrence in ovarian cancer patients. It can also be elevated in other conditions, so it is not used alone for diagnosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2038-3",
+      "name": "CA 19-9",
+      "full_name": "Cancer Antigen 19-9",
+      "aliases": [
+        "Cancer Antigen 19-9"
+      ],
+      "category": "cancer_marker",
+      "organ_system": "gastrointestinal",
+      "tier": 2,
+      "specialist": "oncologist",
+      "common_units": [
+        "U/mL"
+      ],
+      "ref_range_general": "< 37 U/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Cancer Antigen 19-9 measures the level of a protein that can be elevated in certain types of cancer, particularly pancreatic cancer.",
+      "clinical_significance": "Elevated levels of CA 19-9 can indicate the presence of pancreatic cancer or other conditions affecting the pancreas, liver, or bile ducts. It is used to monitor treatment response and disease progression.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2039-6",
+      "name": "CEA",
+      "full_name": "Carcinoembryonic Antigen",
+      "aliases": [
+        "Carcinoembryonic Antigen"
+      ],
+      "category": "cancer_marker",
+      "organ_system": "multi_system",
+      "tier": 2,
+      "specialist": "oncologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "< 3.0 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Carcinoembryonic Antigen (CEA) is a protein that may be elevated in the blood of some people with certain types of cancers.",
+      "clinical_significance": "CEA is used primarily to monitor treatment response and detect recurrence in certain types of cancers, particularly colorectal cancer. Elevated levels can indicate cancer presence or progression, but can also be elevated in non-cancerous conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "1834-1",
+      "name": "AFP",
+      "full_name": "Alpha-Fetoprotein",
+      "aliases": [
+        "Alpha-Fetoprotein"
+      ],
+      "category": "cancer_marker",
+      "organ_system": "hepatic",
+      "tier": 2,
+      "specialist": "oncologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "< 10 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Alpha-Fetoprotein (AFP) measures the level of a protein that is typically produced by the liver and yolk sac of a developing fetus.",
+      "clinical_significance": "Elevated levels of AFP in adults can indicate liver diseases, such as hepatocellular carcinoma, or germ cell tumors. It is used in monitoring treatment response and disease progression.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "56993-0",
+      "name": "Prealbumin",
+      "full_name": "Prealbumin (Transthyretin)",
+      "aliases": [
+        "Prealbumin (Transthyretin)"
+      ],
+      "category": "hepatic",
+      "organ_system": "multi_system",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "15-36 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": null,
+      "what_it_measures": "Prealbumin measures the level of a protein in the blood that is a marker of nutritional status.",
+      "clinical_significance": "Prealbumin is used to assess nutritional status and can indicate protein-calorie malnutrition. It is also used to monitor patients receiving nutritional support.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "27811-9",
+      "name": "Ceruloplasmin",
+      "full_name": "Ceruloplasmin",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "hepatic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "20-50 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": 10,
+      "critical_high": null,
+      "what_it_measures": "Ceruloplasmin measures the level of a protein that carries copper in the blood.",
+      "clinical_significance": "Ceruloplasmin levels are important for diagnosing Wilson's disease, a genetic disorder that causes copper accumulation, and can also indicate liver disease or other metabolic conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2243-2",
+      "name": "Alpha-1 Antitrypsin",
+      "full_name": "Alpha-1 Antitrypsin",
+      "aliases": [],
+      "category": "hepatic",
+      "organ_system": "respiratory",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "100-190 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Alpha-1 Antitrypsin is a protein that protects the lungs from damage.",
+      "clinical_significance": "Low levels of Alpha-1 Antitrypsin can lead to lung diseases such as emphysema and liver disease. It is important for diagnosing Alpha-1 Antitrypsin Deficiency, a genetic disorder.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "49132-4",
+      "name": "VLDL",
+      "full_name": "VLDL Cholesterol",
+      "aliases": [
+        "VLDL Cholesterol"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "5-40 mg/dL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "VLDL cholesterol measures the amount of very low-density lipoprotein cholesterol in the blood.",
+      "clinical_significance": "VLDL cholesterol is important because it carries triglycerides in the blood, and high levels can contribute to the buildup of plaque in arteries, increasing the risk of cardiovascular disease.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "35198-1",
+      "name": "Oxidized LDL",
+      "full_name": "Oxidized LDL",
+      "aliases": [],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "< 60 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Oxidized LDL measures the level of oxidized low-density lipoprotein in the blood.",
+      "clinical_significance": "Elevated levels of oxidized LDL are associated with an increased risk of atherosclerosis and cardiovascular diseases, as they contribute to the formation of plaques in arteries.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "2571-1",
+      "name": "sdLDL",
+      "full_name": "Small Dense LDL",
+      "aliases": [
+        "Small Dense LDL"
+      ],
+      "category": "lipid",
+      "organ_system": "cardiovascular",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "mg/dL"
+      ],
+      "ref_range_general": "< 30 mg/dL desirable",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Small Dense LDL measures a subtype of low-density lipoprotein particles that are smaller and denser than typical LDL particles.",
+      "clinical_significance": "Elevated levels of Small Dense LDL are associated with an increased risk of cardiovascular disease because they are more prone to penetrate the arterial wall and contribute to plaque formation.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "1798-8",
+      "name": "Amylase",
+      "full_name": "Amylase",
+      "aliases": [],
+      "category": "pancreatic",
+      "organ_system": "gastrointestinal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "30-110 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 300,
+      "what_it_measures": "Amylase is an enzyme that helps digest carbohydrates.",
+      "clinical_significance": "Elevated levels of amylase can indicate pancreatitis or other pancreatic disorders, while low levels may suggest pancreatic damage or cystic fibrosis.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2519-7",
+      "name": "Lipase",
+      "full_name": "Lipase",
+      "aliases": [],
+      "category": "pancreatic",
+      "organ_system": "gastrointestinal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "13-60 U/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 400,
+      "what_it_measures": "Lipase measures the level of the enzyme lipase in the blood, which helps break down fats.",
+      "clinical_significance": "Elevated lipase levels can indicate pancreatitis or other pancreatic disorders, making it important for diagnosing and monitoring these conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2157-6",
+      "name": "CK",
+      "full_name": "Creatine Kinase (Total)",
+      "aliases": [
+        "Creatine Kinase (Total)"
+      ],
+      "category": "muscle",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "U/L"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "52-336 U/L",
+      "ref_range_female": "38-176 U/L",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Creatine Kinase (Total) measures the level of an enzyme found in the heart, brain, and skeletal muscle.",
+      "clinical_significance": "Elevated levels of creatine kinase can indicate muscle damage, myocardial infarction, or other conditions affecting muscle tissue.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "49551-5",
+      "name": "CK-MB",
+      "full_name": "Creatine Kinase MB",
+      "aliases": [
+        "Creatine Kinase MB"
+      ],
+      "category": "cardiac",
+      "organ_system": "cardiovascular",
+      "tier": 2,
+      "specialist": "cardiologist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "0-5 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 10,
+      "what_it_measures": "Creatine Kinase MB measures the level of an enzyme found in the heart muscle.",
+      "clinical_significance": "Elevated levels of CK-MB can indicate heart muscle damage, such as from a heart attack, making it important for diagnosing cardiac events.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "30089-4",
+      "name": "Myoglobin",
+      "full_name": "Myoglobin",
+      "aliases": [],
+      "category": "muscle",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "0-85 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 500,
+      "what_it_measures": "Myoglobin measures the level of a protein found in muscle tissue that is released into the bloodstream after muscle injury.",
+      "clinical_significance": "Elevated myoglobin levels can indicate muscle damage, which may be due to conditions such as myocardial infarction or rhabdomyolysis. It is important for diagnosing and monitoring these conditions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2731-8",
+      "name": "PTH",
+      "full_name": "Parathyroid Hormone (Intact)",
+      "aliases": [
+        "Parathyroid Hormone (Intact)"
+      ],
+      "category": "hormone",
+      "organ_system": "endocrine",
+      "tier": 2,
+      "specialist": "endocrinologist",
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "15-65 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Parathyroid hormone (PTH) levels in the blood, which help regulate calcium and phosphorus balance.",
+      "clinical_significance": "PTH is crucial for maintaining calcium homeostasis; abnormal levels can indicate parathyroid gland disorders, kidney disease, or vitamin D imbalances.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "33037-3",
+      "name": "Osteocalcin",
+      "full_name": "Osteocalcin",
+      "aliases": [],
+      "category": "bone",
+      "organ_system": "musculoskeletal",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "same as general",
+      "ref_range_male": "11-39 ng/mL",
+      "ref_range_female": "8-32 ng/mL",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Osteocalcin is a protein hormone produced by osteoblasts, and it is a marker of bone formation.",
+      "clinical_significance": "Osteocalcin levels can help assess bone metabolism and are used in the evaluation of conditions like osteoporosis and other metabolic bone diseases.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "2614-6",
+      "name": "Methemoglobin",
+      "full_name": "Methemoglobin",
+      "aliases": [],
+      "category": "hematology",
+      "organ_system": "hematologic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "%"
+      ],
+      "ref_range_general": "0.4-1.5%",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 30,
+      "what_it_measures": "Methemoglobin measures the level of hemoglobin that is unable to carry oxygen in the blood.",
+      "clinical_significance": "Elevated levels of methemoglobin can lead to methemoglobinemia, a condition that reduces the blood's ability to release oxygen to tissues, potentially causing cyanosis and hypoxia.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "33959-8",
+      "name": "Procalcitonin",
+      "full_name": "Procalcitonin",
+      "aliases": [],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "ng/mL"
+      ],
+      "ref_range_general": "< 0.1 ng/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": 2.0,
+      "what_it_measures": "Procalcitonin is a protein that can indicate the presence of a bacterial infection in the body.",
+      "clinical_significance": "Procalcitonin levels are used to help diagnose bacterial infections and guide antibiotic therapy, particularly in cases of sepsis and lower respiratory tract infections.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "42176-8",
+      "name": "1,25-Dihydroxyvitamin D",
+      "full_name": "1,25-Dihydroxyvitamin D (Calcitriol)",
+      "aliases": [
+        "1,25-Dihydroxyvitamin D (Calcitriol)"
+      ],
+      "category": "vitamin",
+      "organ_system": "endocrine",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "pg/mL"
+      ],
+      "ref_range_general": "19.9-79.3 pg/mL",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "It measures the active form of vitamin D in the blood.",
+      "clinical_significance": "1,25-Dihydroxyvitamin D is crucial for calcium absorption and bone health, and its levels can indicate disorders related to vitamin D metabolism, kidney function, or parathyroid gland activity.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5794-3",
+      "name": "Methylmalonic Acid",
+      "full_name": "Methylmalonic Acid",
+      "aliases": [],
+      "category": "metabolic",
+      "organ_system": "metabolic",
+      "tier": 1,
+      "specialist": null,
+      "common_units": [
+        "nmol/L"
+      ],
+      "ref_range_general": "73-271 nmol/L",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "Methylmalonic acid measures the level of a substance in the blood that can indicate vitamin B12 deficiency.",
+      "clinical_significance": "Elevated levels of methylmalonic acid can indicate a deficiency in vitamin B12, which is important for nerve function and the production of red blood cells. Early detection can prevent neurological and hematological complications.",
+      "fasting_required": true
+    },
+    {
+      "loinc": "16933-4",
+      "name": "Hep B Surface Ag",
+      "full_name": "Hepatitis B Surface Antigen",
+      "aliases": [
+        "Hepatitis B Surface Antigen"
+      ],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "qualitative"
+      ],
+      "ref_range_general": "Negative",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test detects the presence of the Hepatitis B surface antigen in the blood, indicating an active Hepatitis B infection.",
+      "clinical_significance": "The presence of Hepatitis B surface antigen suggests that the person is currently infected with the Hepatitis B virus, which can lead to liver damage and increase the risk of liver cancer.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "16935-9",
+      "name": "Hep B Surface Ab",
+      "full_name": "Hepatitis B Surface Antibody",
+      "aliases": [
+        "Hepatitis B Surface Antibody"
+      ],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "mIU/mL"
+      ],
+      "ref_range_general": ">= 10 mIU/mL indicates immunity",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test measures the presence of antibodies against the hepatitis B virus in the blood.",
+      "clinical_significance": "The presence of hepatitis B surface antibodies indicates immunity to hepatitis B, either from vaccination or past infection. It is important for determining immune status and guiding vaccination decisions.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "16128-1",
+      "name": "Hep C Ab",
+      "full_name": "Hepatitis C Antibody",
+      "aliases": [
+        "Hepatitis C Antibody"
+      ],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "qualitative"
+      ],
+      "ref_range_general": "Negative",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test detects antibodies in the blood that indicate a past or present infection with the Hepatitis C virus.",
+      "clinical_significance": "A positive result suggests exposure to the Hepatitis C virus, which can lead to liver damage and other health issues if not managed properly.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "5290-2",
+      "name": "RPR",
+      "full_name": "Rapid Plasma Reagin (Syphilis Screen)",
+      "aliases": [
+        "Rapid Plasma Reagin (Syphilis Screen)"
+      ],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "qualitative"
+      ],
+      "ref_range_general": "Non-reactive",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test detects antibodies in the blood that indicate a syphilis infection.",
+      "clinical_significance": "A positive result suggests a current or past infection with syphilis, which requires medical evaluation and treatment to prevent complications.",
+      "fasting_required": false
+    },
+    {
+      "loinc": "7917-8",
+      "name": "HIV 1/2 Ab/Ag",
+      "full_name": "HIV 1/2 Antibody/Antigen",
+      "aliases": [
+        "HIV 1/2 Antibody/Antigen"
+      ],
+      "category": "infectious",
+      "organ_system": "immune",
+      "tier": 2,
+      "specialist": "infectious disease specialist",
+      "common_units": [
+        "qualitative"
+      ],
+      "ref_range_general": "Negative",
+      "ref_range_male": "same as general",
+      "ref_range_female": "same as general",
+      "critical_low": null,
+      "critical_high": null,
+      "what_it_measures": "This test detects the presence of antibodies and antigens related to HIV types 1 and 2 in the blood.",
+      "clinical_significance": "A positive result indicates an HIV infection, which is crucial for early diagnosis and management of the disease to prevent progression and transmission.",
+      "fasting_required": false
+    }
+  ],
+  "blocked_report_keywords": [
+    "histopathology",
+    "biopsy report",
+    "biopsy",
+    "radiology report",
+    "x-ray report",
+    "ct scan",
+    "mri scan",
+    "ultrasound report",
+    "echocardiogram",
+    "echocardiography",
+    "ecg report",
+    "ekg report",
+    "pap smear",
+    "cytology report",
+    "genetic test",
+    "genetic screening",
+    "nipt",
+    "karyotype",
+    "endoscopy",
+    "colonoscopy"
+  ]
+}

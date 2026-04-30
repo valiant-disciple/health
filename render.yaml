@@ -1,0 +1,61 @@
+# Render Blueprint — WhatsApp Biomarker Bot
+# ──────────────────────────────────────────────────────────────────────────
+# Two services share one Dockerfile:
+#   • whatsapp-bot-web    → FastAPI webhook receiver (uvicorn/gunicorn)
+#   • whatsapp-bot-worker → Background queue poller
+#
+# Both share env-group "whatsapp-bot-prod" — set secrets there, not in this file.
+# ──────────────────────────────────────────────────────────────────────────
+
+services:
+  - type: web
+    name: whatsapp-bot-web
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./apps/whatsapp-agent/Dockerfile
+    dockerContext: ./apps/whatsapp-agent
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - fromGroup: whatsapp-bot-prod
+
+  - type: worker
+    name: whatsapp-bot-worker
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./apps/whatsapp-agent/Dockerfile
+    dockerContext: ./apps/whatsapp-agent
+    dockerCommand: python worker.py
+    autoDeploy: true
+    envVars:
+      - fromGroup: whatsapp-bot-prod
+
+envVarGroups:
+  - name: whatsapp-bot-prod
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      # Secrets — set these via the Render dashboard:
+      #   PUBLIC_BASE_URL              (your Render web URL)
+      #   TWILIO_ACCOUNT_SID
+      #   TWILIO_AUTH_TOKEN
+      #   TWILIO_WHATSAPP_FROM
+      #   OPENAI_API_KEY
+      #   ORCHESTRATOR_MODEL           (e.g. gpt-4o)
+      #   EXTRACTOR_MODEL              (e.g. gpt-4o-mini)
+      #   VISION_MODEL                 (e.g. gpt-4o)
+      #   MISTRAL_API_KEY
+      #   SUPABASE_URL
+      #   SUPABASE_SERVICE_ROLE_KEY
+      #   SUPABASE_DB_URL
+      #   SUPABASE_POOLER_URL
+      #   SUPABASE_STORAGE_BUCKET      (lab-reports)
+      #   UPSTASH_REDIS_REST_URL
+      #   UPSTASH_REDIS_REST_TOKEN
+      #   PHONE_HASH_PEPPER            (NEVER ROTATE)
+      #   PII_ENCRYPTION_KEY
+      #   SENTRY_DSN                   (optional)
