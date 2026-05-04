@@ -7,7 +7,6 @@ All LLM calls in the app go through this module. That gives us:
 """
 from __future__ import annotations
 
-import asyncio
 import json
 from dataclasses import dataclass
 from typing import Any, Iterable
@@ -50,7 +49,7 @@ def _get_client() -> AsyncOpenAI:
     if _client is None:
         _client = AsyncOpenAI(
             api_key=get_settings().openai_api_key,
-            timeout=60.0,
+            timeout=None,  # timeout passed per-call via create(timeout=...)
             max_retries=0,  # we handle retries ourselves
         )
     return _client
@@ -113,14 +112,7 @@ async def chat(
         reraise=True,
     ):
         with attempt:
-            try:
-                resp = await asyncio.wait_for(
-                    client.chat.completions.create(**kwargs),
-                    timeout=timeout,
-                )
-            except asyncio.TimeoutError as e:
-                last_error = e
-                raise APIConnectionError(message="timeout", request=None) from e
+            resp = await client.chat.completions.create(**kwargs, timeout=timeout)
 
             choice = resp.choices[0]
             text = (choice.message.content or "").strip()
