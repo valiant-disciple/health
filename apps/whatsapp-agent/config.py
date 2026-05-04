@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     # ── OpenAI ──
     openai_api_key: str
     orchestrator_model: str = "gpt-4o"
-    extractor_model: str = "gpt-4.1-nano"
+    extractor_model: str = "gpt-5.4-nano"
     vision_model: str = "gpt-4o"
 
     # ── Mistral (OCR) ──
