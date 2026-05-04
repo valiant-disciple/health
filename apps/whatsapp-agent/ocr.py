@@ -195,19 +195,21 @@ async def extract_from_pdf(pdf_bytes: bytes, user_hash: str | None = None) -> OC
     md = ""
     provider = "none"
 
-    # Stage 1a: try fast pypdf for searchable PDFs (free, instant)
-    pypdf_text = extract_pdf_text_basic(pdf_bytes)
-    if len(pypdf_text) > 200:
-        md = pypdf_text
-        provider = "pypdf"
-        log.info("ocr.pypdf_extracted", chars=len(md))
-
-    # Stage 1b: Mistral OCR for scanned/complex layouts
-    if not md or len(md) < 200:
+    # Stage 1a: Mistral OCR (preferred — clean Markdown tables, works for both
+    # digital and scanned PDFs). Only skipped when no API key is set.
+    if s.mistral_api_key:
         md, _ = await mistral_ocr_pdf(pdf_bytes)
         if md:
             provider = "mistral"
             log.info("ocr.mistral_extracted", chars=len(md))
+
+    # Stage 1b: pypdf fallback for searchable PDFs when Mistral is unavailable
+    if not md or len(md) < 200:
+        pypdf_text = extract_pdf_text_basic(pdf_bytes)
+        if len(pypdf_text) > 200:
+            md = pypdf_text
+            provider = "pypdf"
+            log.info("ocr.pypdf_extracted", chars=len(md))
 
     # Stage 1c: Vision fallback if everything else returned little
     if not md or len(md) < 100:
@@ -229,7 +231,7 @@ async def extract_from_pdf(pdf_bytes: bytes, user_hash: str | None = None) -> OC
     parsed, llm_result = await json_chat(
         messages=[
             {"role": "system", "content": STRUCT_SYSTEM},
-            {"role": "user", "content": md[:30000]},  # cap to be safe on context
+            {"role": "user", "content": md[:15000]},  # values are always early; skip lengthy commentary
         ],
         model=s.extractor_model,
         max_tokens=6000,
@@ -263,7 +265,7 @@ async def extract_from_image(image_bytes: bytes, user_hash: str | None = None) -
     parsed, _ = await json_chat(
         messages=[
             {"role": "system", "content": STRUCT_SYSTEM},
-            {"role": "user", "content": md[:30000]},
+            {"role": "user", "content": md[:15000]},
         ],
         model=s.extractor_model,
         max_tokens=6000,

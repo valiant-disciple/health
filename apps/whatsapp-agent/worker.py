@@ -121,13 +121,13 @@ async def run_worker() -> None:
         log.info("worker.job_started", id=str(job_id)[:8], type=job_type, attempt=job["attempts"])
 
         try:
-            await asyncio.wait_for(_dispatch(job), timeout=120.0)
+            await asyncio.wait_for(_dispatch(job), timeout=180.0)
             await mark_done(job_id)
             elapsed = time.time() - started
             log.info("worker.job_done", id=str(job_id)[:8], elapsed_s=round(elapsed, 2))
         except asyncio.TimeoutError:
             log.error("worker.job_timeout", id=str(job_id)[:8])
-            await mark_failed(job_id, "timeout (>120s)", retry_in_seconds=60)
+            await mark_failed(job_id, "timeout (>180s)", retry_in_seconds=60)
         except Exception as e:
             log.exception("worker.job_failed", id=str(job_id)[:8], error=str(e))
             # Retry with backoff for first few attempts
