@@ -37,6 +37,7 @@ _PRICING_USD_PER_1M: dict[str, tuple[float, float]] = {
     "o1":               (15.00, 60.00),
     "gpt-4.1":           (2.00,  8.00),
     "gpt-4.1-mini":      (0.40,  1.60),
+    "gpt-4.1-nano":      (0.10,  0.40),
 }
 
 _client: AsyncOpenAI | None = None
