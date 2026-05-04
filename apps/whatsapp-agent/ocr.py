@@ -236,6 +236,7 @@ async def extract_from_pdf(pdf_bytes: bytes, user_hash: str | None = None) -> OC
         model=s.extractor_model,
         max_tokens=6000,
         user_hash=user_hash,
+        timeout=120.0,
     )
 
     if not parsed or "results" not in parsed:
@@ -270,6 +271,7 @@ async def extract_from_image(image_bytes: bytes, user_hash: str | None = None) -
         model=s.extractor_model,
         max_tokens=6000,
         user_hash=user_hash,
+        timeout=120.0,
     )
     if not parsed or "results" not in parsed:
         return OCRResult(False, md, {}, "vision", "extractor returned no structured results")

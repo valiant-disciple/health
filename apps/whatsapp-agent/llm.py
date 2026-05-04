@@ -156,6 +156,7 @@ async def json_chat(
     max_tokens: int = 1500,
     user_hash: str | None = None,
     schema_hint: str | None = None,
+    timeout: float = 60.0,
 ) -> tuple[dict, LLMResult]:
     """Variant that asks for and parses JSON. Returns (parsed_dict, full_result)."""
     if schema_hint:
@@ -175,6 +176,7 @@ async def json_chat(
         max_tokens=max_tokens,
         response_format={"type": "json_object"},
         user_hash=user_hash,
+        timeout=timeout,
     )
     try:
         parsed = json.loads(result.text)
