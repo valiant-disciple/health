@@ -232,7 +232,7 @@ async def extract_from_pdf(pdf_bytes: bytes, user_hash: str | None = None) -> OC
             {"role": "user", "content": md[:30000]},  # cap to be safe on context
         ],
         model=s.extractor_model,
-        max_tokens=3000,
+        max_tokens=6000,
         user_hash=user_hash,
     )
 
@@ -266,7 +266,7 @@ async def extract_from_image(image_bytes: bytes, user_hash: str | None = None) -
             {"role": "user", "content": md[:30000]},
         ],
         model=s.extractor_model,
-        max_tokens=3000,
+        max_tokens=6000,
         user_hash=user_hash,
     )
     if not parsed or "results" not in parsed:
